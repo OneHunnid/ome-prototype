@@ -1,12 +1,15 @@
-import Header from './Header'
+import React from 'react'
 import stylesheet from 'styles/index.scss'
 
-const Layout = (props) => (
-  <div>
-    <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
-    <Header />
-    {props.children}
-  </div>
-)
+class Layout extends React.Component {
+  render() {
+    return (
+      <div>
+        <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
+        {this.props.children}
+      </div>
+    )
+  }
+}
 
 export default Layout
