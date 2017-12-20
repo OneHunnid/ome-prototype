@@ -18,7 +18,19 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  padding: 50px;
+  padding: 0;
+}
+
+hr {
+    margin-bottom: 24px;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $n300;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.6rem;
 }
 
 h1 {
@@ -85,4 +97,414 @@ p {
   margin: 0;
   margin-bottom: 2.4rem;
   color: $black;
+}
+
+input {
+  background: $g100;
+  padding: 0 12px;
+  height: 40PX;
+  border: 1px solid $n500;
+  border-radius: 2px;
+
+  &:hover {
+    border: 1px solid $n600;
+  }
+
+  &:focus {
+    border: 1px solid $b400;
+    outline: none;
+  }
+}
+
+textarea {
+  background: $g100;
+  border: 1px solid $n500;
+  border-radius: 2px;
+  width: 100%;
+  min-height: 140px;
+  padding: 14px 12px;
+
+  &:hover {
+    border: 1px solid $n600;
+  }
+
+  &:focus {
+    border: 1px solid $b400;
+    outline: none;
+  }
+}
+
+select {
+  padding: 11px 12px;
+  border: 1px solid $n500;
+  border-radius: 2px;
+  display: inline-block;
+  height: 40px;
+  border-image: none;
+  border-radius: 2px !important;
+  background: $g100;
+}
+
+[type="checkbox"], [type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  height: initial;
+}
+
+/* BUTTONS
+********************/
+.button {
+  cursor: pointer;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &--continue {
+    background-color: $b400;
+    color: $white;
+  }
+
+  &--back {
+    background-color: $white;
+    color: $dark;
+    padding: 12px 34px;
+    border: 1px solid #D8DBE2;
+  }
+
+  &--tertiary {
+    color: $g800;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 11px 24px;
+    text-transform: none;
+    background-image: linear-gradient(-180deg,
+                      rgba(255,255,255,0.00) 0%,
+                      rgba(216,219,226,0.40) 100%);
+    border: 1px solid $n400;
+    border-radius: 2px;
+    text-align: center;
+
+    &:hover {
+      background: #FFFFFF;
+      background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+      border: 1px solid #1178CE;
+    }
+  }
+
+  &--tertiary.selected {
+    background: #FFFFFF;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+    border: 1px solid #1178CE;
+  }
+
+  &--option {
+    padding: 24px 18px;
+    text-transform: none;
+    background-image: linear-gradient(-180deg,
+                      rgba(255,255,255,0.00) 0%,
+                      rgba(216,219,226,0.40) 100%);
+    border: 1px solid $n400;
+    border-radius: 2px;
+
+    &:hover {
+      background: #FFFFFF;
+      background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+      border: 1px solid #1178CE;
+    }
+  }
+
+  &--option.selected {
+    background: #FFFFFF;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+    border: 1px solid #1178CE;
+  }
+
+  &--donation {
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: $book;
+    font-size: 15px;
+  }
+
+  &-group {
+    margin-top: 60px;
+    margin-bottom: 36px;
+  }
+
+  &-group--no-bottom-margin {
+    margin-bottom: 0;
+  }
+}
+
+.button-add {
+  font-size: 1.5rem;
+  font-weight: $medium;
+  color: $b500;
+}
+
+.option {
+
+  &-label {
+    font-size: 1.4rem;
+    font-weight: $bold;
+    color: $g800;
+  }
+
+  &-desc {
+    font-size: 1.3rem;
+    font-weight: $book;
+    color: $g800;
+    float: right;
+  }
+}
+
+/* APP STRUCTURE
+******************/
+
+.main-wrapper {
+  margin-top: 96px;
+  padding: 64px;
+}
+
+.app {
+  margin: 0 auto;
+  max-width: 780px;
+  position: relative;
+
+  &__section {
+    padding-left: 60px;
+    position: relative;
+    padding-bottom: 6px;
+    // max-height: 48px;
+    transition: max-height 0.4s ease-in-out;
+    overflow: hidden;
+    display: block;
+    position: relative;
+  }
+
+  &__section:last-child::after {
+    content: none;
+  }
+
+  & .showtime {
+    max-height: 100%!important;
+  }
+
+  &__section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    background: #CECECE;
+    width: 1px;
+    height: calc(100% - 36px);
+    display: inline-block;
+    left: 12px;
+    top: 32px;
+  }
+
+  &__section__wrapper {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out,
+                visibility 0.4s ease-in-out;
+
+    &.showtime {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__section__title {
+    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  width: 24px;
+  border-radius: 100%;
+  background-color: $b400;
+  color: $white;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.block {
+  margin-top: 24px;
+  min-height: 500px;
+  width: 100%;
+  display: inline-block;
+  background: #ddd;
+  max-width: 220px;
+  margin-right: 15px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+/* FORM ELEMENTS
+********************/
+
+.radio {
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+  margin-bottom: 10px;
+
+  &:last-child {
+  margin-bottom: 0;}
+
+  &__icon {
+    margin-right: 8px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  margin-left: 18px;
+  margin-bottom: 10px;
+
+  &:last-child {
+  margin-bottom: 0;}
+
+  &__icon {
+    margin-right: 8px;
+  }
+}
+
+
+.form-group {
+  margin-bottom: 36px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: $medium;
+    color: $g800;
+    margin-bottom: 1px;
+  }
+
+  &__description {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: $book;
+    color: $g800;
+    opacity: 0.74;
+    margin-bottom: 18px;
+  }
+}
+
+/* CARDS
+********************/
+
+.card {
+  padding: 24px 18px;
+  border-radius: 2px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: $medium;
+    margin-bottom: 5px;
+    color: $g700;
+  }
+
+  &__description {
+    font-size: 13px;
+    font-weight: $book;
+    line-height: 20px;
+    opacity: .74;
+    margin-bottom: 24px;
+  }
+
+  &--default {
+    background: $g200;
+    border: 1px solid $n300;
+  }
+
+  &--elevate {
+    background: $n100;
+    border: 1px solid $n300;
+    box-shadow: 0 2px 6px 0 rgba(13,13,13,0.10);
+  }
+}
+
+.card-bank-account {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+
+  &.showtime {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+  }
+}
+
+.section {
+
+  &-membership {
+
+  }
+
+  &-general {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
+
+  &-royalties {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
+
+  &-required-documents {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
+
+  &-create-account {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
+
+  &-payment {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
+  &-review {
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
+  }
 }

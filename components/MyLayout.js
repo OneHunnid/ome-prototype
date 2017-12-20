@@ -1,7 +1,11 @@
 import React from 'react'
-import stylesheet from 'styles/index.scss'
+import { connect } from 'react-redux'
 
-class Layout extends React.Component {
+import stylesheet from 'styles/index.scss'
+import Header from '../components/Header'
+import HelpPanel from '../components/HelpPanel'
+
+export default class MyLayout extends React.Component {
   render() {
     return (
       <div>
@@ -11,5 +15,3 @@ class Layout extends React.Component {
     )
   }
 }
-
-export default Layout

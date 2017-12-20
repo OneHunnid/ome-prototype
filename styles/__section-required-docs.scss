@@ -1,0 +1,72 @@
+.recdoc {
+  background-color: $g200;
+  border-radius: 2px;
+  border: 1px solid $n300;
+
+  &-head {
+    padding: 18px;
+    border-bottom: 1px solid $n300;
+  }
+
+  &-head-title {
+    font-size: 15px;
+    font-weight: $bold;
+    color: $g800;
+  }
+
+  &-head-desc {
+    font-size: 13px;
+    font-weight: $book;
+    color: $g800;
+    opacity: 0.74;
+  }
+
+  &-body {
+    padding: 24px 18px;
+  }
+
+  &-section {
+    margin-bottom: 4.8rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-section-title {
+    font-size: 13px;
+    font-weight: $bold;
+    color: $g800;
+    margin-bottom: 6px;
+  }
+
+  &-section-desc {
+    font-size: 13px;
+    font-weight: $book;
+    color: $g800;
+    opacity: 0.74;
+    margin-bottom: 18px;
+  }
+
+  &-title {
+    font-size: 15px;
+    font-weight: $bold;
+    color: $g800;
+  }
+
+  &-desc {
+
+  }
+}
+
+.donation-fund {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+
+  &.showtime {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}

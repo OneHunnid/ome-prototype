@@ -1,8 +1,40 @@
 // Font Stacks
-$font-family--primary   : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--primary   : 'Circular Std', Helvetica, Arial, sans-serif;
 $font-family--secondary : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+// Font Weights
+$book   : 400;
+$medium : 500;
+$bold   : 600;
+$black  : 700;
 
 // Colors
 $white : #FFFFFF;
 $black : #000000;
 $dark  : #0D0D0D;
+
+// Blue
+$b700: #002d5b;
+$b600: #004183;
+$b500: #175da7;
+$b400: #1178ce;
+$b300: #489CEF;
+
+// Red
+$r300: #cd35335;
+
+// Neutral
+$n600: #4a4d56;
+$n500: #85868C;
+$n400: #a9abb6;
+$n300: #d8dbe2;
+$n200: #eef0f5;
+$n100: #f7f9fb;
+
+// Grayscale
+$g800: #0d0d0d;
+$g700: #373737;
+$g600: #6d6d6d;
+$g400: #cecece;
+$g200: #fafafa;
+$g100: #ffffff;
