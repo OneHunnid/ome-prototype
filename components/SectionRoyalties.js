@@ -1,8 +1,10 @@
 import React from 'react'
+import _ from 'lodash'
+import { connect } from 'react-redux'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
-export default class SectionRoyalties extends React.Component {
+class SectionRoyalties extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -21,9 +23,30 @@ export default class SectionRoyalties extends React.Component {
 
     currentTarget.classList.toggle('selected')
   }
+  __navigator() {
+    const location = document.getElementById('section-royalties')
+    const objCurrentLocation = this.props.sectionRoyalties
+
+    if ( objCurrentLocation.collapse == false ) {
+        location.classList.remove('curtain-call')
+        location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true ) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
+    const { sectionRoyalties } = this.props
+
     return (
-      <section className="app__section section-royalties curtain-call">
+      <section className="app__section section-royalties curtain-call" id="section-royalties">
         <div className="indicator">3</div>
         <div className="app__section__title">Royalties</div>
 
@@ -65,8 +88,12 @@ export default class SectionRoyalties extends React.Component {
           </div>
         </div>
 
-        <ButtonGroupBackContinue />
+        <ButtonGroupBackContinue currentSection={sectionRoyalties} />
       </section>
     )
   }
 }
+
+const mapStateToProps = ({ sectionRoyalties }) => ({ sectionRoyalties })
+
+export default connect(mapStateToProps, null)(SectionRoyalties)

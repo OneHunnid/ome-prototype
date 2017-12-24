@@ -464,7 +464,10 @@ select {
 .section {
 
   &-membership {
-
+    &.curtain-call {
+      height: 48px;
+      overflow: hidden;
+    }
   }
 
   &-general {

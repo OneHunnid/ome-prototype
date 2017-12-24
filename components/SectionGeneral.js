@@ -1,6 +1,6 @@
 import React from 'react'
+import _ from 'lodash'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
@@ -19,10 +19,32 @@ class SectionGeneral extends React.Component {
 
     currentTarget.classList.toggle('selected')
   }
+  __navigator() {
+    const location = document.getElementById('section-general')
+    const dataObj = this.props.section
+
+    const objCurrentLocation = this.props.sectionGeneral
+
+    if ( objCurrentLocation.collapse == false ) {
+        location.classList.remove('curtain-call')
+        location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true ) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
-    const { sectionMembership, sectionGeneral, sectionRoyalties  } = this.props
+    const { sectionGeneral } = this.props
+
     return (
-      <section className="app__section section-general curtain-call js-app-section-general">
+      <section className="app__section section-general js-app-section-general" id="section-general">
         <div className="indicator">2</div>
         <div className="app__section__title">General</div>
 
@@ -208,12 +230,12 @@ class SectionGeneral extends React.Component {
           </div>
         </div>
 
-        <ButtonGroupBackContinue />
+        <ButtonGroupBackContinue currentSection={sectionGeneral}/>
       </section>
     )
   }
 }
 
-const mapStateToProps = ({ sectionMembership, sectionGeneral, sectionRoyalties }) => ({ sectionMembership, sectionGeneral, sectionRoyalties })
+const mapStateToProps = ({ sectionGeneral }) => ({ sectionGeneral })
 
 export default connect(mapStateToProps, null)(SectionGeneral)

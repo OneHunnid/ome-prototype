@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { collapseSection, expandSection } from '../store'
+import { collapseCurrent, expandNext } from '../store'
 
 class ButtonGroupBackContinue extends React.Component {
   constructor(props){
@@ -10,16 +10,18 @@ class ButtonGroupBackContinue extends React.Component {
     this.__navigateToPreviousSection = this.__navigateToPreviousSection.bind(this)
   }
   __navigateToPreviousSection() {
-    console.log('Back button clicked!')
   }
   __navigateToNextSection() {
-    console.log('Continue button clicked!')
+    const currentLocation = this.props.currentSection
+    this.props.collapseCurrent(currentLocation)
 
-    // this.props.collapseSection(this.props.currentSection)
-    // this.props.expandSection(this.props.currentSection)
+    // const nextLocation = this.props.nextSection
+    // console.log('nextLocation in Button Group', nextLocation)
+    // this.props.expandNext(nextLocation)
   }
   render() {
     const { currentSection } = this.props
+
     return (
       <div className="button-group">
         <div className="button button--back" onClick={this.__navigateToPreviousSection}>Back</div>
@@ -31,8 +33,8 @@ class ButtonGroupBackContinue extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    collapseSection: bindActionCreators(collapseSection, dispatch),
-    expandSection: bindActionCreators(expandSection, dispatch)
+    collapseCurrent: bindActionCreators(collapseCurrent, dispatch),
+    expandNext: bindActionCreators(expandNext, dispatch)
   }
 }
 

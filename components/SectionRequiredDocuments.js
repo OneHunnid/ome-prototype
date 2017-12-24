@@ -1,14 +1,39 @@
 import React from 'react'
+import _ from 'lodash'
+import { connect } from 'react-redux'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
-export default class SectionRequiredDocuments extends React.Component {
+class SectionRequiredDocuments extends React.Component {
   constructor(props) {
     super(props)
   }
+  __navigator() {
+    const location = document.getElementById('section-required-documents')
+    const dataObj = this.props.section
+
+    const objCurrentLocation = this.props.sectionRequiredDocuments
+
+    if ( objCurrentLocation.collapse == false) {
+        location.classList.remove('curtain-call')
+        location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
+    const { sectionRequiredDocuments } = this.props
+
     return (
-      <div className="app__section section-required-documents curtain-call">
+      <div className="app__section section-required-documents curtain-call" id="section-required-documents">
         <div className="indicator">4</div>
         <div className="app__section__title">Required Documents</div>
 
@@ -28,8 +53,12 @@ export default class SectionRequiredDocuments extends React.Component {
           </div>
         </div>
 
-        <ButtonGroupBackContinue />
+        <ButtonGroupBackContinue currentSection={sectionRequiredDocuments}/>
       </div>
     )
   }
 }
+
+const mapStateToProps = ({ sectionRequiredDocuments }) => ({ sectionRequiredDocuments })
+
+export default connect(mapStateToProps, null)(SectionRequiredDocuments)

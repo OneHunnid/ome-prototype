@@ -1,4 +1,5 @@
 import React from 'react'
+import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { setMembershipType } from '../store'
@@ -24,11 +25,33 @@ class SectionMembership extends React.Component {
 
     this.props.setMembershipType(membershipType)
   }
+  __navigator() {
+    const location = document.getElementById('section-membership')
+    const objCurrentLocation = this.props.sectionMembership
+
+    if ( objCurrentLocation.collapse == false) {
+      location.classList.remove('curtain-call')
+      location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
-    const { sectionMembership, sectionGeneral, sectionRoyalties } = this.props
+    const { sectionMembership } = this.props
+
+    console.log('# MEMBERSHIP: ', sectionMembership)
+
 
     return (
-      <section className="app__section section-membership">
+      <section className="app__section section-membership" id="section-membership">
         <div className="indicator">1</div>
         <div className="app__section__title">Membership</div>
 
@@ -100,14 +123,14 @@ class SectionMembership extends React.Component {
           </div>
           <div className="membership-disclaimer">*If you are between 13 and 18 years of age, please have your parents/guardian fill out this online application on your behalf. If you are under 13, <a href="">please click here.</a></div>
 
-          <ButtonGroupBackContinue previousSection={undefined} currentSection={sectionMembership} nextSection={sectionGeneral}/>
+          <ButtonGroupBackContinue currentSection={sectionMembership} />
         </div>
       </section>
     )
   }
 }
 
-const mapStateToProps = ({ sectionMembership, sectionGeneral, sectionRoyalties }) => ({ sectionMembership, sectionGeneral, sectionRoyalties })
+const mapStateToProps = ({ sectionMembership }) => ({ sectionMembership })
 
 const mapDispatchToProps = (dispatch) => {
   return {
