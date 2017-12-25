@@ -1,5 +1,4 @@
 module.exports = function navigator(sectionId, sectionObj) {
-  console.log('Navigator Activated!', sectionId, sectionObj)
   const bodyRect = document.body.getBoundingClientRect(),
   elemRect = sectionId.getBoundingClientRect(),
   offset   = elemRect.top - bodyRect.top;
