@@ -285,19 +285,12 @@ select {
     padding-left: 60px;
     position: relative;
     padding-bottom: 6px;
-    // max-height: 48px;
-    transition: max-height 0.4s ease-in-out;
-    overflow: hidden;
     display: block;
     position: relative;
   }
 
-  &__section:last-child::after {
+  &__section:last-child::before {
     content: none;
-  }
-
-  & .showtime {
-    max-height: 100%!important;
   }
 
   &__section::before {
@@ -464,50 +457,80 @@ select {
 .section {
 
   &-membership {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
 
   &-general {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
 
   &-royalties {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
 
   &-required-documents {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
 
   &-create-account {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
 
   &-payment {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
   &-review {
-    &.curtain-call {
-      height: 48px;
-      overflow: hidden;
+    max-height: 48px;
+    overflow: hidden;
+
+    &.showtime {
+      max-height: 5000px;
+      overflow: visible;
     }
   }
+}
+
+.app-wrapper {
+  opacity: 0;
+  transition: opacity 0.84s ease-in-out;
+}
+
+.showtime .app-wrapper {
+  opacity: 1;
 }

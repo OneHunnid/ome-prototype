@@ -57,8 +57,8 @@ const defaultState = {
 
 export const actionTypes = {
   SET_MEMBERSHIP: 'SET_MEMBERSHIP',
-  COLLAPSE_CURRENT: 'COLLAPSE_CURRENT',
-  EXPAND_NEXT: 'EXPAND_NEXT'
+  MOVE_FORWARD: 'MOVE_FORWARD',
+  MOVE_BACK: 'MOVE_BACK'
 }
 
 // REDUCERS
@@ -68,11 +68,9 @@ export const reducer = (state = defaultState, action) => {
         return Object.assign({}, state, {
           membership: action.membershipType
         })
-      case actionTypes.COLLAPSE_CURRENT:
+      case actionTypes.MOVE_FORWARD:
         const currentName = action.currentSection.currentName
         const nextName = action.currentSection.nextName
-
-        console.log(action.currentSection)
 
         return Object.assign({}, state, {
           [currentName]: {
@@ -84,6 +82,22 @@ export const reducer = (state = defaultState, action) => {
             collapse: false
           }
         })
+        case actionTypes.MOVE_BACK:
+          const currentSection = action.currentSection.currentName
+          const prevSection = action.currentSection.prevName
+
+          if (prevSection != '') {
+            return Object.assign({}, state, {
+              [currentSection]: {
+                ...state[currentSection],
+                collapse: true
+              },
+              [prevSection]: {
+                ...state[prevSection],
+                collapse: false
+              }
+            })
+          }
     default: return state
   }
 }
@@ -97,10 +111,10 @@ export const setMembershipType = (membershipType) => dispatch => {
   return dispatch({ type: actionTypes.SET_MEMBERSHIP, membershipType })
 }
 
-export const collapseCurrent = (currentSection) => dispatch => {
-  return dispatch({ type: actionTypes.COLLAPSE_CURRENT, currentSection })
+export const moveForward = (currentSection) => dispatch => {
+  return dispatch({ type: actionTypes.MOVE_FORWARD, currentSection })
 }
 
-export const expandNext = (foo) => dispatch => {
-  return dispatch({ type: actionTypes.EXPAND_NEXT, foo })
+export const moveBack = (currentSection) => dispatch => {
+  return dispatch({ type: actionTypes.MOVE_BACK, currentSection })
 }

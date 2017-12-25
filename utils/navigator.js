@@ -1,18 +1,14 @@
-module.exports = navigator: function(previousSection, currentSection, nextSection) {
-  // Take current location ID and add + 1 to move forward
-  // If move forward, add .curtain-call to current section to collapse it
-  // Add .showtime to next section
+module.exports = function navigator(sectionId, sectionObj) {
+  console.log('Navigator Activated!', sectionId, sectionObj)
+  const bodyRect = document.body.getBoundingClientRect(),
+  elemRect = sectionId.getBoundingClientRect(),
+  offset   = elemRect.top - bodyRect.top;
 
-
-  // Take current location ID and add - 1 to move backwards
-  // If move backwards, add .curtain-call to current section to collapse it
-  // Add .showtime to previous section
-
-  function moveForward() {
-
+  if ( sectionObj.collapse == false) {
+      sectionId.classList.add('showtime')
+      window.scrollTo(0, offset - 4);
   }
-
-  function moveBackwards() {
-
+  else if ( sectionObj.collapse == true) {
+    sectionId.classList.remove('showtime')
   }
 }

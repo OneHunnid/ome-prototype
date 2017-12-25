@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { setMembershipType } from '../store'
+import navigator from '../utils/navigator'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
@@ -25,24 +26,16 @@ class SectionMembership extends React.Component {
 
     this.props.setMembershipType(membershipType)
   }
-  __navigator() {
+  __handleNavigator() {
     const location = document.getElementById('section-membership')
-    const objCurrentLocation = this.props.sectionMembership
-
-    if ( objCurrentLocation.collapse == false) {
-      location.classList.remove('curtain-call')
-      location.classList.add('showtime')
-    }
-    else if ( objCurrentLocation.collapse == true) {
-      location.classList.remove('showtime')
-      location.classList.add('curtain-call')
-    }
+    const dataObj = this.props.sectionMembership
+    navigator(location, dataObj)
   }
   componentDidMount() {
-    this.__navigator()
+    this.__handleNavigator()
   }
   componentDidUpdate() {
-    this.__navigator()
+    this.__handleNavigator()
   }
   render() {
     const { sectionMembership } = this.props
@@ -52,7 +45,7 @@ class SectionMembership extends React.Component {
         <div className="indicator">1</div>
         <div className="app__section__title">Membership</div>
 
-        <div className="">
+        <div className="app-wrapper">
           <div className="row u-flex">
             <div className="membership-block col col-4 js-option-writer js-membership-option" onClick={this.__handleSelection} data-membership-type="Writer">
               <div className="membership-block__title">Writer</div>
@@ -120,7 +113,7 @@ class SectionMembership extends React.Component {
           </div>
           <div className="membership-disclaimer">*If you are between 13 and 18 years of age, please have your parents/guardian fill out this online application on your behalf. If you are under 13, <a href="">please click here.</a></div>
 
-          <ButtonGroupBackContinue currentSection={sectionMembership} />
+          <ButtonGroupBackContinue currentSection={sectionMembership} primaryButtonText={"Continue"} secondaryButtonText={"Cancel"}/>
         </div>
       </section>
     )
