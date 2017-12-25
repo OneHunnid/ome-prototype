@@ -29,7 +29,7 @@ const defaultState = {
     id: 4,
     prevName: 'sectionRoyalties',
     currentName: 'sectionRequiredDocuments',
-    nextName: 'sectionPayment',
+    nextName: 'sectionCreateAccount',
     collapse: true
   },
   sectionCreateAccount: {
@@ -71,7 +71,7 @@ export const reducer = (state = defaultState, action) => {
       case actionTypes.COLLAPSE_CURRENT:
         const currentName = action.currentSection.currentName
         const nextName = action.currentSection.nextName
-        
+
         console.log(action.currentSection)
 
         return Object.assign({}, state, {
@@ -104,20 +104,3 @@ export const collapseCurrent = (currentSection) => dispatch => {
 export const expandNext = (foo) => dispatch => {
   return dispatch({ type: actionTypes.EXPAND_NEXT, foo })
 }
-
-// case actionTypes.EXPAND_NEXT:
-//   // const currentName = action.currentSection.currentName
-//   // const prevName = action.currentSection.prevName
-//   // const nextName = action.currentSection.nextName
-//   // const id = action.currentSection.id
-//
-//   console.log('EXPAND_NEXT Reducer: foo', action.foo)
-//
-//   return Object.assign({}, state, {
-//     [currentName]: {
-//       id: id,
-//       collapse: false,
-//       currentName: currentName,
-//       nextName: nextName,
-//     }
-//   })

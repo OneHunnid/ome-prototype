@@ -10,8 +10,6 @@ class SectionRequiredDocuments extends React.Component {
   }
   __navigator() {
     const location = document.getElementById('section-required-documents')
-    const dataObj = this.props.section
-
     const objCurrentLocation = this.props.sectionRequiredDocuments
 
     if ( objCurrentLocation.collapse == false) {

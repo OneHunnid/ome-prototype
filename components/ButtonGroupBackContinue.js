@@ -14,10 +14,6 @@ class ButtonGroupBackContinue extends React.Component {
   __navigateToNextSection() {
     const currentLocation = this.props.currentSection
     this.props.collapseCurrent(currentLocation)
-
-    // const nextLocation = this.props.nextSection
-    // console.log('nextLocation in Button Group', nextLocation)
-    // this.props.expandNext(nextLocation)
   }
   render() {
     const { currentSection } = this.props

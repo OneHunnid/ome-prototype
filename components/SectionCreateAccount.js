@@ -1,14 +1,37 @@
 import React from 'react'
+import _ from 'lodash'
+import { connect } from 'react-redux'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
-export default class SectionCreateAccount extends React.Component {
+class SectionCreateAccount extends React.Component {
   constructor(props) {
     super(props)
   }
+  __navigator() {
+    const location = document.getElementById('section-create-account')
+    const objCurrentLocation = this.props.sectionCreateAccount
+
+    if ( objCurrentLocation.collapse == false) {
+        location.classList.remove('curtain-call')
+        location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
+    const { sectionCreateAccount } = this.props
+
     return (
-      <div className="app__section section-create-account curtain-call">
+      <div className="app__section section-create-account curtain-call" id="section-create-account">
         <div className="indicator">5</div>
         <div className="app__section__title">Create Account</div>
 
@@ -37,8 +60,12 @@ export default class SectionCreateAccount extends React.Component {
             </div>
           </div>
         </div>
-        <ButtonGroupBackContinue />
+        <ButtonGroupBackContinue currentSection={sectionCreateAccount}/>
       </div>
     )
   }
 }
+
+const mapStateToProps = ({ sectionCreateAccount }) => ({ sectionCreateAccount })
+
+export default connect(mapStateToProps, null)(SectionCreateAccount)

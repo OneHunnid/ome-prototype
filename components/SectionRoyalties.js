@@ -44,6 +44,7 @@ class SectionRoyalties extends React.Component {
   }
   render() {
     const { sectionRoyalties } = this.props
+    console.log('# SECTION ROYALTIES ', sectionRoyalties)
 
     return (
       <section className="app__section section-royalties curtain-call" id="section-royalties">

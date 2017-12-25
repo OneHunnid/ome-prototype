@@ -47,9 +47,6 @@ class SectionMembership extends React.Component {
   render() {
     const { sectionMembership } = this.props
 
-    console.log('# MEMBERSHIP: ', sectionMembership)
-
-
     return (
       <section className="app__section section-membership" id="section-membership">
         <div className="indicator">1</div>

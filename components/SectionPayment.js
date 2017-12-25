@@ -1,8 +1,10 @@
 import React from 'react'
+import _ from 'lodash'
+import { connect } from 'react-redux'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
-export default class SectionPayment extends React.Component {
+class SectionPayment extends React.Component {
   constructor(props) {
     super(props)
   }
@@ -21,9 +23,31 @@ export default class SectionPayment extends React.Component {
 
     currentTarget.classList.toggle('selected')
   }
+  __navigator() {
+    const location = document.getElementById('section-payment')
+    const objCurrentLocation = this.props.sectionPayment
+
+    if ( objCurrentLocation.collapse == false ) {
+        location.classList.remove('curtain-call')
+        location.classList.add('showtime')
+    }
+    else if ( objCurrentLocation.collapse == true ) {
+      location.classList.remove('showtime')
+      location.classList.add('curtain-call')
+    }
+  }
+  componentDidMount() {
+    this.__navigator()
+  }
+  componentDidUpdate() {
+    this.__navigator()
+  }
   render() {
+    const { sectionPayment } = this.props
+    console.log('# SECTION PAYMENT ', sectionPayment)
+
     return (
-      <div className="app__section section-payment curtain-call">
+      <div className="app__section section-payment curtain-call" id="section-payment">
         <div className="indicator">6</div>
         <div className="app__section__title">Payment</div>
 
@@ -94,9 +118,13 @@ export default class SectionPayment extends React.Component {
             <div className="form-group__description ">Before submitting, please check that the information is accurate.</div>
           </div>
 
-          <ButtonGroupBackContinue />
+          <ButtonGroupBackContinue currentSection={sectionPayment}/>
         </div>
       </div>
     )
   }
 }
+
+const mapStateToProps = ({ sectionPayment }) => ({ sectionPayment })
+
+export default connect(mapStateToProps, null)(SectionPayment)
