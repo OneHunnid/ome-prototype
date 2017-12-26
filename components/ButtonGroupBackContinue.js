@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { moveForward, moveBack } from '../store'
+import { moveForward, moveBack, addResidenceAddress } from '../store'
 
 class ButtonGroupBackContinue extends React.Component {
   constructor(props){
@@ -15,10 +15,19 @@ class ButtonGroupBackContinue extends React.Component {
   }
   __navigateToNextSection() {
     const currentLocation = this.props.currentSection
+    const residenceAddress = this.props.residenceAddress
+
     this.props.moveForward(currentLocation)
+
+    if (residenceAddress !== undefined) {
+      this.props.addResidenceAddress(residenceAddress)
+    }
+
   }
   render() {
-    const { currentSection, primaryButtonText, secondaryButtonText } = this.props
+    const { currentSection, primaryButtonText, secondaryButtonText, residenceAddress } = this.props
+
+    // console.log('BUTTON GROUP ', residenceAddress)
 
     return (
       <div className="button-group">
@@ -32,7 +41,8 @@ class ButtonGroupBackContinue extends React.Component {
 const mapDispatchToProps = (dispatch) => {
   return {
     moveForward: bindActionCreators(moveForward, dispatch),
-    moveBack: bindActionCreators(moveBack, dispatch)
+    moveBack: bindActionCreators(moveBack, dispatch),
+    addResidenceAddress: bindActionCreators(addResidenceAddress, dispatch)
   }
 }
 

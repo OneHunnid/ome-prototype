@@ -52,13 +52,44 @@ const defaultState = {
     currentName: 'sectionReview',
     nextName: '',
     collapse: true
+  },
+  residenceAddress: {
+    id: 1,
+    type: 'Residence',
+    country: '',
+    addressOne: '',
+    addressTwo: '',
+    city: '',
+    state: '',
+    zip: ''
+  },
+  royaltyAddress: {
+    id: 2,
+    type: 'Royalty',
+    country: '',
+    addressOne: '',
+    addressTwo: '',
+    city: '',
+    state: '',
+    zip: ''
+  },
+  billingAddress: {
+    id: 3,
+    type: 'Billing',
+    country: '',
+    addressOne: '',
+    addressTwo: '',
+    city: '',
+    state: '',
+    zip: ''
   }
 }
 
 export const actionTypes = {
   SET_MEMBERSHIP: 'SET_MEMBERSHIP',
   MOVE_FORWARD: 'MOVE_FORWARD',
-  MOVE_BACK: 'MOVE_BACK'
+  MOVE_BACK: 'MOVE_BACK',
+  ADD_RESIDENCE_ADDRESS: 'ADD_RESIDENCE_ADDRESS'
 }
 
 // REDUCERS
@@ -82,22 +113,44 @@ export const reducer = (state = defaultState, action) => {
             collapse: false
           }
         })
-        case actionTypes.MOVE_BACK:
-          const currentSection = action.currentSection.currentName
-          const prevSection = action.currentSection.prevName
+      case actionTypes.MOVE_BACK:
+        const currentSection = action.currentSection.currentName
+        const prevSection = action.currentSection.prevName
 
-          if (prevSection != '') {
-            return Object.assign({}, state, {
-              [currentSection]: {
-                ...state[currentSection],
-                collapse: true
-              },
-              [prevSection]: {
-                ...state[prevSection],
-                collapse: false
-              }
-            })
+        if (prevSection != '') {
+          return Object.assign({}, state, {
+            [currentSection]: {
+              ...state[currentSection],
+              collapse: true
+            },
+            [prevSection]: {
+              ...state[prevSection],
+              collapse: false
+            }
+          })
+        }
+      case actionTypes.ADD_RESIDENCE_ADDRESS:
+      console.log('ACTION ', action.address)
+        const country = action.address.country
+        const addressOne = action.address.addressOne
+        const addressTwo = action.address.addressTwo
+        const city = action.address.city
+        const addressState = action.address.state
+        const zip = action.address.zip
+
+        console.log('ACTION ', country, addressOne, addressTwo, city, addressState, zip)
+
+        return Object.assign({}, state, {
+          residenceAddress: {
+            type: 'Residence',
+            country: country,
+            addressOne: addressOne,
+            addressTwo: addressTwo,
+            city: city,
+            state: addressState,
+            zip: zip
           }
+        })
     default: return state
   }
 }
@@ -117,4 +170,8 @@ export const moveForward = (currentSection) => dispatch => {
 
 export const moveBack = (currentSection) => dispatch => {
   return dispatch({ type: actionTypes.MOVE_BACK, currentSection })
+}
+
+export const addResidenceAddress = (address) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_RESIDENCE_ADDRESS, address })
 }

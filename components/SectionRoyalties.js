@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { connect } from 'react-redux'
 import navigator from '../utils/navigator'
 
+import AddressComponent from './AddressComponent'
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
 class SectionRoyalties extends React.Component {
@@ -12,17 +13,6 @@ class SectionRoyalties extends React.Component {
   __handleClickShowtime() {
     const cardElement = document.getElementById('js-card-royalties')
     cardElement.classList.toggle('showtime')
-  }
-  __handleSelectionSelected(e) {
-    e.preventDefault();
-    const currentTarget = e.currentTarget
-    const optionsArray = Array.prototype.slice.call(document.querySelectorAll(".js-address-option"));
-
-    optionsArray.forEach(function(option) {
-      option.classList.remove('selected')
-    })
-
-    currentTarget.classList.toggle('selected')
   }
   __handleNavigator() {
     const location = document.getElementById('section-royalties')
@@ -71,16 +61,7 @@ class SectionRoyalties extends React.Component {
             </div>
           </div>
 
-          <div className="form-group">
-            <div className="form-group__label">Royalty Mailing Address</div>
-            <div className="form-group__description">If you would like your royalties to be sent somewhere other than your residence, enter it below.</div>
-            <div className="row">
-              <div className="button button--option col col-8 js-address-option" onClick={this.__handleSelectionSelected}><span className="option-label">Resident Address</span><span className="option-desc">3440 Goldenrod Road Apartment 3C</span></div>
-            </div>
-            <div className="row">
-              <div className="button-add">+ Add Address</div>
-            </div>
-          </div>
+          <AddressComponent title={"Royalty Mailing Address"} description={"If you would like your royalties to be sent somewhere other than your residence, enter it below."} />
 
           <ButtonGroupBackContinue currentSection={sectionRoyalties} primaryButtonText={"Continue"} secondaryButtonText={"Back"}/>
         </div>

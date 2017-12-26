@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 import _ from 'lodash'
 import { connect } from 'react-redux'
 import navigator from '../utils/navigator'
@@ -8,6 +9,10 @@ import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 class SectionGeneral extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      residenceAddressObj: {}
+    }
+    this.__captureAddress = this.__captureAddress.bind(this)
   }
   __handleSelection(e) {
     e.preventDefault();
@@ -24,6 +29,32 @@ class SectionGeneral extends React.Component {
     const location = document.getElementById('section-general')
     const dataObj = this.props.sectionGeneral
     navigator(location, dataObj)
+  }
+  __captureAddress(e) {
+    e.preventDefault();
+    const country = $('#residenceAddressCountry').val()
+    const addressOne = $('#residenceAddressAddressOne').val()
+    const addressTwo = $('#residenceAddressAddressTwo').val()
+    const zip = $('#residenceAddressZip').val()
+    const city = $('#residenceAddressCity').val()
+    const state = $('#residenceAddressState').val()
+
+    let residenceAddressObj = {
+      'country': country,
+      'addressOne': addressOne,
+      'addressTwo': addressTwo,
+      'zip': zip,
+      'city': city,
+      'state': state
+    }
+
+    this.setState({ residenceAddressObj })
+
+    if (country === 'USA') {
+      $('#countryCode').val('+1')
+    } else if (country === 'UK') {
+      $('#countryCode').val('+44')
+    }
   }
   componentDidMount() {
     this.__handleNavigator()
@@ -139,28 +170,27 @@ class SectionGeneral extends React.Component {
             </div>
           </div>
 
-          <div className="form-group">
+          <div className="form-group" onChange={this.__captureAddress} >
             <div className="form-group__label">Resident Address</div>
             <div className="form-group__description">Address of primary residence.</div>
             <div className="row">
               <div className="row">
-                <select className="col col-9">
-                  <option value="volvo">United States of America</option>
-                  <option value="saab">United Kingdom</option>
-                  <option value="mercedes">Japan</option>
-                  <option value="audi">Mexico</option>
+                <select className="col col-9" id="residenceAddressCountry" >
+                  <option value="placeholder">Country or Territory</option>
+                  <option value="USA">United States of America</option>
+                  <option value="UK">United Kingdom</option>
                 </select>
               </div>
               <div className="row">
-                <input className="col col-9" placeholder="Address" />
+                <input className="col col-9" placeholder="Address" id="residenceAddressAddressOne"/>
               </div>
               <div className="row">
-                <input className="col col-9" placeholder="Floor, Apartment, Suite, etc" />
+                <input className="col col-9" placeholder="Floor, Apartment, Suite, etc" id="residenceAddressAddressTwo"/>
               </div>
               <div className="row">
-                <input className="col col-2" placeholder="ZIP" type="number"/>
-                <input className="col col-4" placeholder="City" />
-                <input className="col col-3" placeholder="State" />
+                <input className="col col-2" placeholder="ZIP" type="number" id="residenceAddressZip"/>
+                <input className="col col-4" placeholder="City" id="residenceAddressCity"/>
+                <input className="col col-3" placeholder="State" id="residenceAddressState"/>
               </div>
             </div>
           </div>
@@ -178,8 +208,8 @@ class SectionGeneral extends React.Component {
             <div className="form-group__label">Phone Number</div>
             <div className="form-group__description">Country code is automatically selected</div>
             <div className="row">
-              <input placeholder="+1" className="col col-2" />
-              <input placeholder="555-555-5555" className="col col-4" />
+              <input placeholder="+1" className="col col-3" id="countryCode"/>
+              <input placeholder="555-555-5555" className="col col-3" />
             </div>
           </div>
 
@@ -199,6 +229,7 @@ class SectionGeneral extends React.Component {
             <div className="form-group__description">Select the genre that most accurately represents your music composition.</div>
             <div className="row">
               <select className="col col-6">
+                <option>Select genre...</option>
                 <option>Christian</option>
                 <option>Concert</option>
                 <option>Country</option>
@@ -223,7 +254,7 @@ class SectionGeneral extends React.Component {
             </div>
           </div>
 
-          <ButtonGroupBackContinue currentSection={sectionGeneral} primaryButtonText={"Continue"} secondaryButtonText={"Back"}/>
+          <ButtonGroupBackContinue currentSection={sectionGeneral} primaryButtonText={"Continue"} secondaryButtonText={"Back"} residenceAddress = {this.state.residenceAddressObj}/>
         </div>
       </section>
     )

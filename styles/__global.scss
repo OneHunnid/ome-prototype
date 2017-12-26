@@ -164,6 +164,7 @@ select {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.4px;
+  transition: background-color 0.24s ease-in-out;
 
   &:last-child {
     margin-right: 0;
@@ -172,6 +173,10 @@ select {
   &--continue {
     background-color: $b400;
     color: $white;
+  }
+
+  &--continue:hover {
+    background-color: $b500;
   }
 
   &--back {
