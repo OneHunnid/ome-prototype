@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { moveForward, moveBack, addResidenceAddress } from '../store'
+import { moveForward, moveBack, addAddress } from '../store'
 
 class ButtonGroupBackContinue extends React.Component {
   constructor(props){
@@ -20,7 +20,7 @@ class ButtonGroupBackContinue extends React.Component {
     this.props.moveForward(currentLocation)
 
     if (residenceAddress !== undefined) {
-      this.props.addResidenceAddress(residenceAddress)
+      this.props.addAddress(residenceAddress)
     }
 
   }
@@ -42,7 +42,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     moveForward: bindActionCreators(moveForward, dispatch),
     moveBack: bindActionCreators(moveBack, dispatch),
-    addResidenceAddress: bindActionCreators(addResidenceAddress, dispatch)
+    addAddress: bindActionCreators(addAddress, dispatch)
   }
 }
 

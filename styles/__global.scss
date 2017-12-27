@@ -187,29 +187,18 @@ select {
   }
 
   &--tertiary {
-    color: $g800;
-    font-size: 15px;
-    font-weight: 400;
-    padding: 11px 24px;
-    text-transform: none;
-    background-image: linear-gradient(-180deg,
-                      rgba(255,255,255,0.00) 0%,
-                      rgba(216,219,226,0.40) 100%);
-    border: 1px solid $n400;
-    border-radius: 2px;
-    text-align: center;
+    background: $n300;
 
     &:hover {
-      background: #FFFFFF;
-      background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
-      border: 1px solid #1178CE;
+      background: $n400;
     }
   }
 
-  &--tertiary.selected {
-    background: #FFFFFF;
-    background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
-    border: 1px solid #1178CE;
+  &--cancel {
+
+    &:hover {
+      background: $g100;
+    }
   }
 
   &--option {
@@ -229,6 +218,32 @@ select {
   }
 
   &--option.selected {
+    background: #FFFFFF;
+    background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+    border: 1px solid #1178CE;
+  }
+
+  &--option-two {
+    color: $g800;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 11px 24px;
+    text-transform: none;
+    background-image: linear-gradient(-180deg,
+                      rgba(255,255,255,0.00) 0%,
+                      rgba(216,219,226,0.40) 100%);
+    border: 1px solid $n400;
+    border-radius: 2px;
+    text-align: center;
+
+    &:hover {
+      background: #FFFFFF;
+      background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
+      border: 1px solid #1178CE;
+    }
+  }
+
+  &--option-two.selected {
     background: #FFFFFF;
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
     border: 1px solid #1178CE;
@@ -255,6 +270,15 @@ select {
   font-size: 1.5rem;
   font-weight: $medium;
   color: $b500;
+  cursor: pointer;
+}
+
+.feather-plus {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 0.8rem;
+  width: 22px;
 }
 
 .option {
@@ -427,6 +451,10 @@ select {
     color: $g700;
   }
 
+  &__title--margin-bottom {
+    margin-bottom: 18px;
+  }
+
   &__description {
     font-size: 13px;
     font-weight: $book;
@@ -444,6 +472,11 @@ select {
     background: $n100;
     border: 1px solid $n300;
     box-shadow: 0 2px 6px 0 rgba(13,13,13,0.10);
+  }
+
+  &-button-group {
+    text-align: right;
+    margin-top: 36px;
   }
 }
 
@@ -538,4 +571,30 @@ select {
 
 .showtime .app-wrapper {
   opacity: 1;
+}
+
+.add-address-button {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.24s ease-in-out;
+
+  &.showtime {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.add-address-card {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.24s ease-in-out;
+
+  &.showtime {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
 }

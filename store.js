@@ -61,7 +61,8 @@ const defaultState = {
     addressTwo: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '',
+    completed: false
   },
   royaltyAddress: {
     id: 2,
@@ -71,7 +72,8 @@ const defaultState = {
     addressTwo: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '',
+    completed: false
   },
   billingAddress: {
     id: 3,
@@ -81,7 +83,8 @@ const defaultState = {
     addressTwo: '',
     city: '',
     state: '',
-    zip: ''
+    zip: '',
+    completed: false
   }
 }
 
@@ -89,7 +92,8 @@ export const actionTypes = {
   SET_MEMBERSHIP: 'SET_MEMBERSHIP',
   MOVE_FORWARD: 'MOVE_FORWARD',
   MOVE_BACK: 'MOVE_BACK',
-  ADD_RESIDENCE_ADDRESS: 'ADD_RESIDENCE_ADDRESS'
+  ADD_RESIDENCE_ADDRESS: 'ADD_RESIDENCE_ADDRESS',
+  ADD_ADDRESS: 'ADD_ADDRESS'
 }
 
 // REDUCERS
@@ -129,28 +133,27 @@ export const reducer = (state = defaultState, action) => {
             }
           })
         }
-      case actionTypes.ADD_RESIDENCE_ADDRESS:
-      console.log('ACTION ', action.address)
-        const country = action.address.country
-        const addressOne = action.address.addressOne
-        const addressTwo = action.address.addressTwo
-        const city = action.address.city
-        const addressState = action.address.state
-        const zip = action.address.zip
+        case actionTypes.ADD_ADDRESS:
+          const type = action.address.type
+          const country = action.address.country
+          const addressOne = action.address.addressOne
+          const addressTwo = action.address.addressTwo
+          const city = action.address.city
+          const addressState = action.address.state
+          const zip = action.address.zip
 
-        console.log('ACTION ', country, addressOne, addressTwo, city, addressState, zip)
-
-        return Object.assign({}, state, {
-          residenceAddress: {
-            type: 'Residence',
-            country: country,
-            addressOne: addressOne,
-            addressTwo: addressTwo,
-            city: city,
-            state: addressState,
-            zip: zip
-          }
-        })
+          return Object.assign({}, state, {
+            residenceAddress: {
+              type: type,
+              country: country,
+              addressOne: addressOne,
+              addressTwo: addressTwo,
+              city: city,
+              state: addressState,
+              zip: zip,
+              completed: true
+            }
+          })
     default: return state
   }
 }
@@ -174,4 +177,9 @@ export const moveBack = (currentSection) => dispatch => {
 
 export const addResidenceAddress = (address) => dispatch => {
   return dispatch({ type: actionTypes.ADD_RESIDENCE_ADDRESS, address })
+}
+
+export const addAddress = (address) => dispatch => {
+  console.log('ACTION', address)
+  return dispatch({ type: actionTypes.ADD_ADDRESS, address })
 }

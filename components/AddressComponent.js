@@ -1,22 +1,18 @@
 import React from 'react'
+import $ from 'jquery'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-// import { addCount } from '../store'
+import { addAddress } from '../store'
+
+import AddAddress from './AddAddress'
 
 class AddressComponent extends React.Component {
   constructor(props) {
     super(props)
-    // this.__addNewAddress = this.__addNewAddress.bind(this)
-    // this.__handleChosenAddress = this.__handleChosenAddress.bind(this)
-  }
-  __addNewAddress() {
-
   }
   __handleChosenAddress(e) {
     e.preventDefault();
-    console.log('I WAS CLICKED')
     const currentTarget = e.currentTarget
-    console.log('currentTarget', currentTarget)
     const optionsArray = Array.prototype.slice.call(document.querySelectorAll(".js-address-option"));
 
     optionsArray.forEach(function(option) {
@@ -27,7 +23,6 @@ class AddressComponent extends React.Component {
   }
   render () {
     const { title, description, residenceAddress } = this.props
-    console.log('AddAddress Component', this.props )
     return (
       <div className="form-group">
         <div className="form-group__label">{title}</div>
@@ -37,9 +32,7 @@ class AddressComponent extends React.Component {
             <AddressOption address={residenceAddress} handleClick={this.__handleChosenAddress.bind(this)}/>
           </div>
         </div>
-        <div className="row">
-          <div className="button-add">+ Add Address</div>
-        </div>
+        <AddAddress label={"Add Address"}/>
       </div>
     )
   }
@@ -51,7 +44,6 @@ class AddressOption extends React.Component {
   }
   render() {
     const { address } = this.props
-    console.log('AddressOption Component', this.props)
 
     return (
       <div className="row">
@@ -64,11 +56,5 @@ class AddressOption extends React.Component {
 }
 
 const mapStateToProps = ({ residenceAddress }) => ({ residenceAddress })
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addCount: bindActionCreators(addCount, dispatch)
-//   }
-// }
 
 export default connect(mapStateToProps, null)(AddressComponent)

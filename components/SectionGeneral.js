@@ -32,6 +32,7 @@ class SectionGeneral extends React.Component {
   }
   __captureAddress(e) {
     e.preventDefault();
+    const type = 'Residence'
     const country = $('#residenceAddressCountry').val()
     const addressOne = $('#residenceAddressAddressOne').val()
     const addressTwo = $('#residenceAddressAddressTwo').val()
@@ -40,6 +41,7 @@ class SectionGeneral extends React.Component {
     const state = $('#residenceAddressState').val()
 
     let residenceAddressObj = {
+      'type': type,
       'country': country,
       'addressOne': addressOne,
       'addressTwo': addressTwo,
@@ -76,9 +78,9 @@ class SectionGeneral extends React.Component {
             <div className="form-group__label">Are you currently a member of a performing rights organization (PRO)?</div>
             <div className="form-group__description">A PRO (like ASCAP, BMI, or PRS) collects royalties on behalf of music creators. If you are a member of a PRO, you will need a release letter that allows you to join ASCAP. You may continue through the sign-up process anyway.</div>
             <div className="row">
-              <div className="button button--tertiary col col-4 js-pro-option" onClick={this.__handleSelection}>Yes</div>
-              <div className="button button--tertiary col col-4 js-pro-option" onClick={this.__handleSelection}>No</div>
-              <div className="button button--tertiary col col-4 js-pro-option" onClick={this.__handleSelection}>I am not sure</div>
+              <div className="button button--option-two col col-4 js-pro-option" onClick={this.__handleSelection}>Yes</div>
+              <div className="button button--option-two col col-4 js-pro-option" onClick={this.__handleSelection}>No</div>
+              <div className="button button--option-two col col-4 js-pro-option" onClick={this.__handleSelection}>I am not sure</div>
             </div>
           </div>
 
