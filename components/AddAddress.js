@@ -23,7 +23,7 @@ class AddAddress extends React.Component {
     button.addClass('showtime')
   }
   __handleSaveButton() {
-    const type = 'royalty'
+    const type = this.props.addAddressType
     const country = $('#cardCountry').val()
     const addressOne = $('#cardAddressOne').val()
     const addressTwo = $('#cardAddressTwo').val()
@@ -42,9 +42,12 @@ class AddAddress extends React.Component {
     }
 
     this.props.addAddress(addressObj)
+
+    const card = $('.js-add-address-card')
+    card.removeClass('showtime')
   }
   render() {
-    const { label } = this.props
+    const { label, addAddressType } = this.props
     return (
       <div className="row">
         <div className="button-add add-address-button js-add-address-button showtime" onClick={this.__handleAddAddress.bind(this)}>
@@ -55,7 +58,7 @@ class AddAddress extends React.Component {
           {label}
         </div>
         <div className="row add-address-card js-add-address-card">
-          <div className="card card--elevate col col-8">
+          <div className="card card--elevate col col-12">
             <div className="card__title card__title--margin-bottom">Add Address</div>
             <div className="row">
               <select className="col col-12" id="cardCountry" >

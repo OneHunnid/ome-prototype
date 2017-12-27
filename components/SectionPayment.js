@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { connect } from 'react-redux'
 import navigator from '../utils/navigator'
 
+import AddressComponent from './AddressComponent'
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
 class SectionPayment extends React.Component {
@@ -66,19 +67,7 @@ class SectionPayment extends React.Component {
               </div>
             </div>
 
-            <div className="form-group">
-              <div className="form-group__label">Billing Address</div>
-              <div className="form-group__description">Select your billing address.</div>
-              <div className="row">
-                <div className="button button--option col col-12 js-address-option--payment" onClick={this.__handleSelectionSelected}><span className="option-label">Resident Address</span><span className="option-desc">3440 Goldenrod Road Apartment 3C...</span></div>
-              </div>
-              <div className="row">
-                <div className="button button--option col col-12 js-address-option--payment" onClick={this.__handleSelectionSelected}><span className="option-label">Royalty Address</span><span className="option-desc">1900 Broadyway, New York, NY, 10013</span></div>
-              </div>
-              <div className="row">
-                <div className="button-add">+ Add Address</div>
-              </div>
-            </div>
+            <AddressComponent addAddressType={'Billing'} title={"Billing Address"} description={"Select your billing address"} />
 
             <div className="form-group">
               <div className="form-group__label">Donate</div>
