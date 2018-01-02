@@ -1,4 +1,5 @@
 import React from 'react'
+import $ from 'jquery'
 import _ from 'lodash'
 import { connect } from 'react-redux'
 import navigator from '../utils/navigator'
@@ -32,12 +33,15 @@ class SectionPayment extends React.Component {
   }
   componentDidMount() {
     this.__handleNavigator()
+    // const button = $('.js-add-address-button')
+    // button.addClass('showtime')
   }
   componentDidUpdate() {
     this.__handleNavigator()
   }
   render() {
     const { sectionPayment } = this.props
+
 
     return (
       <div className="app__section section-payment curtain-call" id="section-payment">

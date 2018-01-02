@@ -62,7 +62,7 @@ const defaultState = {
     //   city: '',
     //   state: '',
     //   zip: '',
-    //   completed: true
+    //   completed: false
     // },
     // {
     //   type: 'Royalty',

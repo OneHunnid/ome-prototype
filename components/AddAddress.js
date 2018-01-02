@@ -1,5 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
+import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addAddress } from '../store'
@@ -23,6 +24,7 @@ class AddAddress extends React.Component {
     button.addClass('showtime')
   }
   __handleSaveButton() {
+    const card = $('.js-add-address-card')
     const type = this.props.addAddressType
     const country = $('#cardCountry').val()
     const addressOne = $('#cardAddressOne').val()
@@ -43,11 +45,32 @@ class AddAddress extends React.Component {
 
     this.props.addAddress(addressObj)
 
-    const card = $('.js-add-address-card')
-    card.removeClass('showtime')
+    this.__handleCancelButton()
+  }
+  __addAddressCheck() {
+    // const button = $('.js-add-address-button')
+    // const addressType = this.props.addAddressType
+    // const addressArray = this.props.addresses
+    // const checkRoyaltyStatus = _.find(addressArray, {'type': 'Royalty' })
+    // const checkBillingStatus = _.find(addressArray, {'type': 'Billing' })
+    //
+    // console.log('__addAddressCheck()', checkRoyaltyStatus)
+
+    // if (checkRoyaltyStatus.completed === true) {
+    //   button.removeClass('showtime')
+    // } else if ( checkRoyaltyStatus.completed === false){
+    //   button.addClass('showtime')
+    // }
+    //
+    // if (checkBillingStatus.completed === true) {
+    //   button.removeClass('showtime')
+    // } else {
+    //   button.addClass('showtime')
+    // }
   }
   render() {
-    const { label, addAddressType } = this.props
+    const { label, addAddressType, addresses } = this.props
+
     return (
       <div className="row">
         <div className="button-add add-address-button js-add-address-button showtime" onClick={this.__handleAddAddress.bind(this)}>
@@ -91,10 +114,12 @@ class AddAddress extends React.Component {
   }
 }
 
+const mapStateToProps = ({ addresses }) => ({ addresses })
+
 const mapDispatchToProps = (dispatch) => {
   return {
     addAddress: bindActionCreators(addAddress, dispatch)
   }
 }
 
-export default connect(null, mapDispatchToProps)(AddAddress)
+export default connect(mapStateToProps, mapDispatchToProps)(AddAddress)

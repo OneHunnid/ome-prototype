@@ -14,20 +14,11 @@ class AddressComponent extends React.Component {
   render () {
     const { title, description, addresses, addAddressType } = this.props
 
-    const foobar = _.map(addresses, function(key) {
-      console.log(key.completed)
+    const addressOptions = _.map(addresses, function(key) {
       if (key.completed == true) {
-        console.log('ADDRESS IS TRUE', key.type)
         return <AddressOption address={key} />
       }
     })
-
-    // handleClick={this.__handleChosenAddress.bind(this)}
-
-
-    const residenceAddress = _.find(addresses, {type: 'Residence'})
-    const royaltyAddress = _.find(addresses, {type: 'Royalty'})
-    const billingAddress = _.find(addresses, {type: 'Billing'})
 
     return (
       <div className="form-group">
@@ -35,7 +26,7 @@ class AddressComponent extends React.Component {
         <div className="form-group__description">{description}</div>
         <div className="row">
           <div className="js-address-option-group">
-{foobar}
+            {addressOptions}
           </div>
         </div>
         <AddAddress addAddressType={addAddressType} label={"Add Address"}/>
@@ -62,7 +53,6 @@ class AddressOption extends React.Component {
   render() {
     const { address } = this.props
 
-// onClick={this.props.handleClick.bind(this)}
     return (
       <div className="row">
         <div className="button button--option col col-12 js-address-option" onClick={this.__handleChosenAddress}>
