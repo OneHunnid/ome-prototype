@@ -116,6 +116,13 @@ input {
   }
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 textarea {
   background: $g100;
   border: 1px solid $n500;
@@ -597,4 +604,23 @@ select {
     opacity: 1;
     visibility: visible;
   }
+}
+
+
+.num {
+	position:relative;
+  height: 40px;
+}
+
+.ssn-number {
+	position: absolute;
+}
+
+.ssn-value {
+	position: absolute;
+	top:0;
+	color: transparent !important;
+	background: transparent;
+	border:none;
+  margin: 0!important;
 }

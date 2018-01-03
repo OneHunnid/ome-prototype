@@ -59,8 +59,20 @@ class SectionGeneral extends React.Component {
       $('#countryCode').val('+44')
     }
   }
+  __replaceSSN() {
+    $('.ssn-value').on('keydown keyup mousedown mouseup', function() {
+       	 var res = this.value, //grabs the value
+       		 len = res.length, //grabs the length
+       		 max = 9, //sets a max chars
+       		 stars = len>0?len>1?len>2?len>3?len>4?'***-**-':'***-*':'***-':'**':'*':'', //this provides the masking and formatting
+       		result = stars+res.substring(5); //this is the result
+       	 $(this).attr('maxlength', max); //setting the max length
+       	$(".ssn-number").val(result); //spits the value into the input
+       });
+  }
   componentDidMount() {
     this.__handleNavigator()
+    this.__replaceSSN()
   }
   componentDidUpdate() {
     this.__handleNavigator()
@@ -93,7 +105,7 @@ class SectionGeneral extends React.Component {
               <input className="col col-2" placeholder="Middle" />
               <input className="col col-4" placeholder="Last" />
               <select className="col col-2">
-                <option>Suffix</option>
+                <option disabled selected>Suffix</option>
                 <option>I</option>
                 <option>II</option>
                 <option>III</option>
@@ -109,6 +121,7 @@ class SectionGeneral extends React.Component {
             <div className="form-group__description">Must appear as it does on your tax returns.</div>
             <div className="row">
               <select className="col col-3">
+                <option disabled selected>Month</option>
                 <option>January</option>
                 <option>February</option>
                 <option>March</option>
@@ -123,6 +136,7 @@ class SectionGeneral extends React.Component {
                 <option>December</option>
               </select>
               <select className="col col-2">
+              <option disabled selected>Day</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -156,7 +170,7 @@ class SectionGeneral extends React.Component {
                 <option>30</option>
                 <option>31</option>
               </select>
-              <input className="col col-3" placeholder="1999" />
+              <input className="col col-3" placeholder="1999" type="number" min="1900" nax="2018"/>
             </div>
           </div>
 
@@ -165,10 +179,10 @@ class SectionGeneral extends React.Component {
             <div className="form-group__description">Non-U.S. residents will need to be asked to provide a W8.</div>
             <div className="row">
               <label className="radio">
-                <input className="radio__icon" type="radio" /> Yes, I am a U.S Citizen
+                <input className="radio__icon" type="radio" name="resident"/> Yes, I am a U.S Citizen
               </label>
               <label className="radio">
-                <input className="radio__icon" type="radio" /> No, I am not a U.S. Citizen
+                <input className="radio__icon" type="radio" name="resident"/> No, I am not a U.S. Citizen
               </label>
             </div>
           </div>
@@ -179,7 +193,7 @@ class SectionGeneral extends React.Component {
             <div className="row">
               <div className="row">
                 <select className="col col-9" id="residenceAddressCountry" >
-                  <option value="placeholder">Country or Territory</option>
+                  <option value="placeholder" selected disabled>Country or Territory</option>
                   <option value="USA">United States of America</option>
                   <option value="UK">United Kingdom</option>
                 </select>
@@ -202,8 +216,9 @@ class SectionGeneral extends React.Component {
           <div className="form-group">
             <div className="form-group__label">Tax ID</div>
             <div className="form-group__description">Please enter your SSN or ITIN</div>
-            <div className="row">
-            <input placeholder="***-**-****"  className="col col-6" />
+            <div className="row num">
+              <input placeholder="***-**-****"  className="col col-6 ssn-number"/>
+              <input className="col col-6 ssn-value" />
             </div>
           </div>
 
