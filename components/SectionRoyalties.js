@@ -61,8 +61,10 @@ class SectionRoyalties extends React.Component {
             </div>
           </div>
 
-          <div className="col col-8">
-            <AddressComponent addAddressType={'Royalty'} title={"Royalty Mailing Address"} description={"If you would like your royalties to be sent somewhere other than your residence, enter it below."} />
+          <div className="row" >
+            <div className="col col-8">
+              <AddressComponent addAddressType={'Royalty'} title={"Royalty Mailing Address"} description={"If you would like your royalties to be sent somewhere other than your residence, enter it below."} />
+            </div>
           </div>
 
           <ButtonGroupBackContinue currentSection={sectionRoyalties} primaryButtonText={"Continue"} secondaryButtonText={"Back"}/>
