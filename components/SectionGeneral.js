@@ -3,6 +3,7 @@ import $ from 'jquery'
 import _ from 'lodash'
 import { connect } from 'react-redux'
 import navigator from '../utils/navigator'
+import tophat from '../utils/tophat'
 
 import ButtonGroupBackContinue from './ButtonGroupBackContinue'
 
