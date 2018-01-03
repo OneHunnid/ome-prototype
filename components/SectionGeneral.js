@@ -55,8 +55,12 @@ class SectionGeneral extends React.Component {
 
     if (country === 'USA') {
       $('#countryCode').val('+1')
+      $('#countryFlag').removeClass('flag-icon-gb')
+      $('#countryFlag').addClass('flag-icon-us')
     } else if (country === 'UK') {
       $('#countryCode').val('+44')
+      $('#countryFlag').removeClass('flag-icon-us')
+      $('#countryFlag').addClass('flag-icon-gb')
     }
   }
   __replaceSSN() {
@@ -70,9 +74,25 @@ class SectionGeneral extends React.Component {
        	$(".ssn-number").val(result); //spits the value into the input
        });
   }
+  __maskPhone() {
+    $("#phoneNumber").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            return false;
+        }
+        var curchr = this.value.length;
+        var curval = $(this).val();
+        if (curchr == 3) {
+            $(this).val(curval + "-");
+        } else if (curchr == 7) {
+            $(this).val(curval + "-");
+        }
+        $(this).attr('maxlength', '12');
+    });
+  }
   componentDidMount() {
     this.__handleNavigator()
     this.__replaceSSN()
+    this.__maskPhone()
   }
   componentDidUpdate() {
     this.__handleNavigator()
@@ -226,8 +246,11 @@ class SectionGeneral extends React.Component {
             <div className="form-group__label">Phone Number</div>
             <div className="form-group__description">Country code is automatically selected</div>
             <div className="row">
-              <input placeholder="+1" className="col col-3" id="countryCode"/>
-              <input placeholder="555-555-5555" className="col col-3" />
+              <span className="relative">
+                <input placeholder="+1" className="country-code col col-2" id="countryCode" />
+                <span id="countryFlag" className="flag flag-icon flag-icon-us"></span>
+              </span>
+              <input placeholder="555-555-5555" id="phoneNumber" className="col col-3"/>
             </div>
           </div>
 

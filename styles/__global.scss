@@ -624,3 +624,20 @@ select {
 	border:none;
   margin: 0!important;
 }
+
+.country-code {
+  text-align: right;
+}
+
+.relative {
+  position: relative
+}
+
+.flag {
+  position: absolute !important;
+  left: 6px;
+  top: -5px;
+  width: 35px !important;
+  height: 29px;
+  border-radius: 2px;
+}
