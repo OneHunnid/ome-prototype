@@ -9,7 +9,7 @@ const defaultState = {
     prevName: '',
     currentName: 'sectionMembership',
     nextName: 'sectionGeneral',
-    collapse: true
+    collapse: false
   },
   sectionGeneral: {
     id: 2,
@@ -44,7 +44,7 @@ const defaultState = {
     prevName: 'sectionCreateAccount',
     currentName: 'sectionPayment',
     nextName: 'sectionReview',
-    collapse: false
+    collapse: true
   },
   sectionReview: {
     id: 6,

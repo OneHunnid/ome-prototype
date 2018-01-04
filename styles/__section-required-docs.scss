@@ -70,3 +70,37 @@
     visibility: visible;
   }
 }
+
+/* W-9 TAX FORM
+*******************************/
+.taxform {
+
+  &-title {
+
+  }
+
+  &-desc {
+
+  }
+
+  &-tos {
+    background: $white;
+    padding: 18px;
+    font-size: 14px;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid $n300;
+    margin-bottom: 24px;
+    overflow-y: scroll;
+  }
+
+  &-exemption {
+    border-bottom: 2px solid $n300;
+    margin-bottom: 36px;
+  }
+
+  &-exemption--flex {
+    display: flex;
+    margin-bottom: 36px;
+  }
+}
