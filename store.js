@@ -9,7 +9,7 @@ const defaultState = {
     prevName: '',
     currentName: 'sectionMembership',
     nextName: 'sectionGeneral',
-    collapse: false
+    collapse: true
   },
   sectionGeneral: {
     id: 2,
@@ -44,7 +44,7 @@ const defaultState = {
     prevName: 'sectionCreateAccount',
     currentName: 'sectionPayment',
     nextName: 'sectionReview',
-    collapse: true
+    collapse: false
   },
   sectionReview: {
     id: 6,
@@ -53,38 +53,7 @@ const defaultState = {
     nextName: '',
     collapse: true
   },
-  addresses: [
-    // {
-    //   type: 'Residence',
-    //   country: '',
-    //   addressOne: '',
-    //   addressTwo: '',
-    //   city: '',
-    //   state: '',
-    //   zip: '',
-    //   completed: false
-    // },
-    // {
-    //   type: 'Royalty',
-    //   country: '',
-    //   addressOne: '',
-    //   addressTwo: '',
-    //   city: '',
-    //   state: '',
-    //   zip: '',
-    //   completed: false
-    // },
-    // {
-    //   type: 'Billing',
-    //   country: '',
-    //   addressOne: '',
-    //   addressTwo: '',
-    //   city: '',
-    //   state: '',
-    //   zip: '',
-    //   completed: false
-    // }
-  ]
+  addresses: []
 }
 
 export const actionTypes = {

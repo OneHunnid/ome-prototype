@@ -48,7 +48,7 @@ class SectionPayment extends React.Component {
         <div className="indicator">6</div>
         <div className="app__section__title">Payment</div>
 
-        <div className="app-wrapper">
+        <div className="app-wrapper app-wrapper--payment">
 
           <div className="payment__left col col-8">
             <div className="form-group">
@@ -107,6 +107,23 @@ class SectionPayment extends React.Component {
 
             <ButtonGroupBackContinue currentSection={sectionPayment} primaryButtonText={"Review Application"} secondaryButtonText={"Back"}/>
           </div>
+
+          <div className="payment__right col col-4">
+            <div className="summary-block">
+              <div className="summary-block-title">Payment Summary</div>
+              <div className="summary-block-body">
+                <div className="summary-block-body-row">
+                  <div className="summary-block-body-row-label">Processing Fee</div>
+                  <div className="summary-block-body-row-price">$50</div>
+                </div>
+              </div>
+              <div className="summary-block-bottom">
+                <div className="summary-block-bottom-label">Total<span className="summary-block-bottom-currency">USD</span></div>
+                <div className="summary-block-bottom-price">$50</div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     )

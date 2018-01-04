@@ -576,6 +576,10 @@ select {
   transition: opacity 0.84s ease-in-out;
 }
 
+.app-wrapper--payment {
+  display: flex;
+}
+
 .showtime .app-wrapper {
   opacity: 1;
 }
@@ -640,4 +644,69 @@ select {
   width: 35px !important;
   height: 29px;
   border-radius: 2px;
+}
+
+/* PAYMENT SUMMARY BLOCK
+*************************************/
+.summary-block {
+  position: sticky;
+  top: 120px;
+  background-color: $g200;
+  border: 1px solid $n300;
+  padding: 18px;
+  border-radius: 2px;
+
+  &-title {
+    font-size: 13px;
+    font-weight: $bold;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &-body {
+    padding: 18px 0;
+    margin: 18px 0;
+    border-top: 1px solid $n300;
+    border-bottom: 1px solid $n300;
+  }
+
+  &-body-row {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &-body-row-label {
+    font-size: 13px;
+    font-weight: $bold;
+  }
+
+  &-body-row-price {
+    font-size: 16px;
+    font-weight: $medium;
+    margin-left: auto;
+  }
+
+  &-bottom {
+    display: flex;
+    align-items: center;
+  }
+
+  &-bottom-label {
+    font-size: 17px;
+    font-weight: $bold;
+    text-align: center;
+    margin-right: auto;
+  }
+
+  &-bottom-currency {
+    font-size: 11px;
+    font-weight: 400;
+    display: block;
+  }
+
+  &-bottom-price {
+    font-size: 30px;
+    font-weight: $medium;
+  }
 }
