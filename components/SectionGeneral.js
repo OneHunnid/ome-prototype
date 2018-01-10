@@ -207,6 +207,15 @@ class SectionGeneral extends React.Component {
             </div>
           </div>
 
+          <div className="form-group">
+            <div className="form-group__label">Tax ID</div>
+            <div className="form-group__description">Please enter your SSN or ITIN</div>
+            <div className="row num">
+              <input placeholder="*********"  className="col col-6 ssn-number"/>
+              <input className="col col-6 ssn-value" />
+            </div>
+          </div>
+
           <div className="form-group" onChange={this.__captureAddress} >
             <div className="form-group__label">Resident Address</div>
             <div className="form-group__description">Address of primary residence.</div>
@@ -229,16 +238,6 @@ class SectionGeneral extends React.Component {
                 <input className="col col-4" placeholder="City" id="residenceAddressCity"/>
                 <input className="col col-3" placeholder="State" id="residenceAddressState"/>
               </div>
-            </div>
-          </div>
-
-
-          <div className="form-group">
-            <div className="form-group__label">Tax ID</div>
-            <div className="form-group__description">Please enter your SSN or ITIN</div>
-            <div className="row num">
-              <input placeholder="*********"  className="col col-6 ssn-number"/>
-              <input className="col col-6 ssn-value" />
             </div>
           </div>
 
