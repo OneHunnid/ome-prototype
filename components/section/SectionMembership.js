@@ -2,10 +2,10 @@ import React from 'react'
 import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { setMembershipType } from '../store'
-import navigator from '../utils/navigator'
+import { setMembershipType } from '../../store'
+import navigator from '../../utils/navigator'
 
-import ButtonGroupBackContinue from './ButtonGroupBackContinue'
+import ButtonGroupBackContinue from '../ButtonGroupBackContinue'
 
 class SectionMembership extends React.Component {
   constructor(props) {

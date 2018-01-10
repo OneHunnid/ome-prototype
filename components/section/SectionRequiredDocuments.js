@@ -1,9 +1,9 @@
 import React from 'react'
 import _ from 'lodash'
 import { connect } from 'react-redux'
-import navigator from '../utils/navigator'
+import navigator from '../../utils/navigator'
 
-import ButtonGroupBackContinue from './ButtonGroupBackContinue'
+import ButtonGroupBackContinue from '../ButtonGroupBackContinue'
 
 class SectionRequiredDocuments extends React.Component {
   constructor(props) {

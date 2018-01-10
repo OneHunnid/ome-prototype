@@ -53,7 +53,58 @@ const defaultState = {
     nextName: '',
     collapse: true
   },
-  addresses: []
+  addresses: [],
+  section: [
+    {
+      id: 1,
+      prevName: '',
+      currentName: 'sectionMembership',
+      nextName: 'sectionGeneral',
+      collapse: false
+    },
+    {
+      id: 2,
+      prevName: 'sectionMembership',
+      currentName: 'sectionGeneral',
+      nextName: 'sectionRoyalties',
+      collapse: true
+    },
+    {
+      id: 3,
+      prevName: 'sectionGeneral',
+      currentName: 'sectionRoyalties',
+      nextName: 'sectionRequiredDocuments',
+      collapse: true
+    },
+    {
+      id: 4,
+      prevName: 'sectionRoyalties',
+      currentName: 'sectionRequiredDocuments',
+      nextName: 'sectionCreateAccount',
+      collapse: true
+    },
+    {
+      id: 5,
+      prevName: 'sectionRequiredDocuments',
+      currentName: 'sectionCreateAccount',
+      nextName: 'sectionPayment',
+      collapse: true
+    },
+    {
+      id: 6,
+      prevName: 'sectionCreateAccount',
+      currentName: 'sectionPayment',
+      nextName: 'sectionReview',
+      collapse: true
+    },
+    {
+      id: 6,
+      prevName: 'sectionPayment',
+      currentName: 'sectionReview',
+      nextName: '',
+      collapse: true
+    }
+  ]
 }
 
 export const actionTypes = {

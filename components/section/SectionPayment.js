@@ -2,10 +2,10 @@ import React from 'react'
 import $ from 'jquery'
 import _ from 'lodash'
 import { connect } from 'react-redux'
-import navigator from '../utils/navigator'
+import navigator from '../../utils/navigator'
 
-import AddressComponent from './AddressComponent'
-import ButtonGroupBackContinue from './ButtonGroupBackContinue'
+import AddressComponent from '../AddressComponent'
+import ButtonGroupBackContinue from '../ButtonGroupBackContinue'
 
 class SectionPayment extends React.Component {
   constructor(props) {

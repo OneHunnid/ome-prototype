@@ -6,12 +6,12 @@ import withRedux from 'next-redux-wrapper'
 import stylesheet from 'styles/index.scss'
 import Header from '../components/Header'
 import HelpPanel from '../components/HelpPanel'
-import SectionMembership from '../components/SectionMembership'
-import SectionGeneral from '../components/SectionGeneral'
-import SectionRoyalties from '../components/SectionRoyalties'
-import SectionRequiredDocuments from '../components/SectionRequiredDocuments'
-import SectionCreateAccount from '../components/SectionCreateAccount'
-import SectionPayment from '../components/SectionPayment'
+import SectionMembership from '../components/section/SectionMembership'
+import SectionGeneral from '../components/section/SectionGeneral'
+import SectionRoyalties from '../components/section/SectionRoyalties'
+import SectionRequiredDocuments from '../components/section/SectionRequiredDocuments'
+import SectionCreateAccount from '../components/section/SectionCreateAccount'
+import SectionPayment from '../components/section/SectionPayment'
 
 
 class Index extends React.Component {
