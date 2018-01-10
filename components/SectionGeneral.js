@@ -140,7 +140,7 @@ class SectionGeneral extends React.Component {
             <div className="form-group__label">Date of Birth</div>
             <div className="form-group__description">Must appear as it does on your tax returns.</div>
             <div className="row">
-              <select className="col col-3">
+              <select className="col col-4">
                 <option disabled selected>Month</option>
                 <option>January</option>
                 <option>February</option>
