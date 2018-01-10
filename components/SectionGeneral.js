@@ -263,6 +263,9 @@ class SectionGeneral extends React.Component {
             <div className="row">
               <input placeholder="Verify email" className="col col-6"/>
             </div>
+            <label className="checkbox email-checkbox">
+              <input className="checkbox__icon" type="checkbox" checked/> I want to receive updates about ASCAPs partners, promotions and news
+            </label>
           </div>
 
           <div className="form-group">
