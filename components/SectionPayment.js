@@ -78,7 +78,7 @@ class SectionPayment extends React.Component {
               <div className="form-group__description">Help support ASCAP initiatives by donating today!</div>
               <div className="row">
                 <label className="checkbox">
-                  <input className="checkbox__icon" type="checkbox" onClick={this.__handleClick}/> I would like to donate to the ASCAP legislative fund for the Arts
+                  <input className="checkbox__icon" type="checkbox" onClick={this.__handleClick}/> I would like to donate to the  <a href="#">ASCAP legislative fund for the Arts</a>
                 </label>
               </div>
               <div className="row donation-fund" id="js-donation-fund">

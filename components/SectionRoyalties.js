@@ -36,7 +36,7 @@ class SectionRoyalties extends React.Component {
         <div className="app-wrapper">
           <div className="form-group">
             <div className="form-group__label">Would you like to enroll in direct deposit?</div>
-            <div className="form-group__description">This is the quickest way to receive your royalties.</div>
+            <div className="form-group__description">This is the quickest way to receive your royalties. <a href="">Terms and Conditions</a></div>
             <div className="row">
               <label className="checkbox js-checkbox-royalties">
                 <input className="checkbox__icon" type="checkbox" onClick={this.__handleClickShowtime}/> Yes, I would like to enroll in direct depsit
