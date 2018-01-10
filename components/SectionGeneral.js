@@ -68,7 +68,7 @@ class SectionGeneral extends React.Component {
        	 var res = this.value, //grabs the value
        		 len = res.length, //grabs the length
        		 max = 9, //sets a max chars
-       		 stars = len>0?len>1?len>2?len>3?len>4?'***-**-':'***-*':'***-':'**':'*':'', //this provides the masking and formatting
+       		 stars = len>0?len>1?len>2?len>3?len>4?'*****':'****':'***':'**':'*':'', //this provides the masking and formatting
        		result = stars+res.substring(5); //this is the result
        	 $(this).attr('maxlength', max); //setting the max length
        	$(".ssn-number").val(result); //spits the value into the input
@@ -237,7 +237,7 @@ class SectionGeneral extends React.Component {
             <div className="form-group__label">Tax ID</div>
             <div className="form-group__description">Please enter your SSN or ITIN</div>
             <div className="row num">
-              <input placeholder="***-**-****"  className="col col-6 ssn-number"/>
+              <input placeholder="*********"  className="col col-6 ssn-number"/>
               <input className="col col-6 ssn-value" />
             </div>
           </div>
