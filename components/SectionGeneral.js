@@ -195,7 +195,7 @@ class SectionGeneral extends React.Component {
           </div>
 
           <div className="form-group">
-            <div className="form-group__label">Are you a U.S. Resident for tax purposes?</div>
+            <div className="form-group__label">Are you a U.S. resident for tax purposes?</div>
             <div className="form-group__description">Non-U.S. residents will need to be asked to provide a W8.</div>
             <div className="row">
               <label className="radio">
