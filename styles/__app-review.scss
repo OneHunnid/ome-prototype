@@ -1,0 +1,40 @@
+.app-review {
+  .section-membership, .section-general, .section-royalties,
+  .section-required-documents, .section-create-account, .section-payment {
+    max-height: 5000px;
+    overflow: visible;
+  }
+
+  .app-wrapper {
+    opacity: 1;
+  }
+
+  .app-wrapper--form {
+    display: none;
+  }
+
+  .app-wrapper--review {
+    display: block;
+  }
+
+  .button-group {
+    display: none;
+  }
+}
+
+.app-wrapper--review {
+  display: none;
+  margin-bottom: 36px;
+}
+
+
+.review-label {
+  text-align: right;
+  font-weight: $medium;
+  font-size: 16px;
+}
+
+.review-selection {
+  font-weight: $book;
+  font-size: 16px;
+}

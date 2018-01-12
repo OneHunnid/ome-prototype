@@ -27,8 +27,6 @@ class ButtonGroupBackContinue extends React.Component {
   render() {
     const { currentSection, primaryButtonText, secondaryButtonText, residenceAddress } = this.props
 
-    // console.log('BUTTON GROUP ', residenceAddress)
-
     return (
       <div className="button-group">
         <div className="button button--back" onClick={this.__navigateToPreviousSection}>{secondaryButtonText}</div>

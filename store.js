@@ -4,12 +4,14 @@ import thunkMiddleware from 'redux-thunk'
 
 const defaultState = {
   membership: 'none',
+  application: [],
+  addresses: [],
   sectionMembership: {
     id: 1,
     prevName: '',
     currentName: 'sectionMembership',
     nextName: 'sectionGeneral',
-    collapse: true
+    collapse: false
   },
   sectionGeneral: {
     id: 2,
@@ -51,9 +53,8 @@ const defaultState = {
     prevName: 'sectionPayment',
     currentName: 'sectionReview',
     nextName: '',
-    collapse: false
+    collapse: true
   },
-  addresses: [],
   section: [
     {
       id: 1,
@@ -111,7 +112,7 @@ export const actionTypes = {
   SET_MEMBERSHIP: 'SET_MEMBERSHIP',
   MOVE_FORWARD: 'MOVE_FORWARD',
   MOVE_BACK: 'MOVE_BACK',
-  ADD_RESIDENCE_ADDRESS: 'ADD_RESIDENCE_ADDRESS',
+  ADD_MEMBERSHIP_DATA: 'ADD_MEMBERSHIP_DATA',
   ADD_ADDRESS: 'ADD_ADDRESS'
 }
 
@@ -178,6 +179,16 @@ export const reducer = (state = defaultState, action) => {
               }
             ]
           })
+          case actionTypes.ADD_MEMBERSHIP_DATA:
+            const obj = action.obj
+            console.log('REDUCER: ', obj)
+
+            return Object.assign({}, state, {
+              application: {
+                'membership': obj.membership,
+                ...state.application
+              }
+            })
     default: return state
   }
 }
@@ -199,8 +210,8 @@ export const moveBack = (currentSection) => dispatch => {
   return dispatch({ type: actionTypes.MOVE_BACK, currentSection })
 }
 
-export const addResidenceAddress = (address) => dispatch => {
-  return dispatch({ type: actionTypes.ADD_RESIDENCE_ADDRESS, address })
+export const addMembershipData = (obj) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_MEMBERSHIP_DATA, obj })
 }
 
 export const addAddress = (address) => dispatch => {
