@@ -84,4 +84,15 @@
 .membership-disclaimer {
   font-size: 1.2rem;
   margin-top: 2.4rem;
+  margin-bottom: 3.6rem;
+}
+
+.company-type {
+  display: none;
+  opacity: 0;
+
+  &.showtime {
+    display: block;
+    opacity: 1;
+  }
 }

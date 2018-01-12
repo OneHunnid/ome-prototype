@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux'
 import { setMembershipType } from '../../store'
 import navigator from '../../utils/navigator'
 
+import CompanyType from '../containers/CompanyType'
 import ButtonGroupBackContinue from '../ButtonGroupBackContinue'
 
 class SectionMembership extends React.Component {
@@ -23,13 +24,23 @@ class SectionMembership extends React.Component {
     })
 
     currentTarget.classList.toggle('selected')
-
+    this.__handleCompanyType(membershipType)
     this.props.setMembershipType(membershipType)
   }
   __handleNavigator() {
     const location = document.getElementById('section-membership')
     const dataObj = this.props.sectionMembership
     navigator(location, dataObj)
+  }
+  __handleCompanyType(membershipType) {
+    console.log('Membership type ', membershipType)
+    const companyTypeHook = document.getElementById('fieldCompanyType')
+
+    if (membershipType != 'Writer') {
+      companyTypeHook.classList.add('showtime')
+    } else {
+      companyTypeHook.classList.remove('showtime')
+    }
   }
   componentDidMount() {
     this.__handleNavigator()
@@ -112,6 +123,10 @@ class SectionMembership extends React.Component {
             </div>
           </div>
           <div className="membership-disclaimer">*If you are between 13 and 18 years of age, please have your parents/guardian fill out this online application on your behalf. If you are under 13, <a href="">please click here.</a></div>
+
+          <div className="js-company-type">
+            <CompanyType />
+          </div>
 
           <ButtonGroupBackContinue currentSection={sectionMembership} primaryButtonText={"Continue"} secondaryButtonText={"Cancel"}/>
         </div>

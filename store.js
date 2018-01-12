@@ -153,7 +153,7 @@ export const reducer = (state = defaultState, action) => {
           })
         }
         case actionTypes.ADD_ADDRESS:
-          console.log('REDUCER ADD_ADDRESS ', action.address)
+          // console.log('REDUCER ADD_ADDRESS ', action.address)
 
           const type = action.address.type
           const country = action.address.country
