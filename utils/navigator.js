@@ -3,7 +3,7 @@ module.exports = function navigator(sectionId, sectionObj) {
   elemRect = sectionId.getBoundingClientRect(),
   offset   = elemRect.top - bodyRect.top;
 
-  // console.log(sectionObj)
+  // console.log('Navigator ', sectionId, sectionObj)
 
   if ( sectionObj.collapse == false) {
       sectionId.classList.add('showtime')

@@ -9,7 +9,7 @@ const defaultState = {
     prevName: '',
     currentName: 'sectionMembership',
     nextName: 'sectionGeneral',
-    collapse: false
+    collapse: true
   },
   sectionGeneral: {
     id: 2,
@@ -47,11 +47,11 @@ const defaultState = {
     collapse: true
   },
   sectionReview: {
-    id: 6,
+    id: 7,
     prevName: 'sectionPayment',
     currentName: 'sectionReview',
     nextName: '',
-    collapse: true
+    collapse: false
   },
   addresses: [],
   section: [
@@ -98,7 +98,7 @@ const defaultState = {
       collapse: true
     },
     {
-      id: 6,
+      id: 7,
       prevName: 'sectionPayment',
       currentName: 'sectionReview',
       nextName: '',

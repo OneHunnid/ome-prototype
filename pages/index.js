@@ -12,6 +12,7 @@ import SectionRoyalties from '../components/section/SectionRoyalties'
 import SectionRequiredDocuments from '../components/section/SectionRequiredDocuments'
 import SectionCreateAccount from '../components/section/SectionCreateAccount'
 import SectionPayment from '../components/section/SectionPayment'
+import SectionReview from '../components/section/SectionReview'
 
 
 class Index extends React.Component {
@@ -24,7 +25,6 @@ class Index extends React.Component {
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
         <Header />
         <HelpPanel />
-
         <div className="main-wrapper">
           <div className="app">
             <SectionMembership />
@@ -33,17 +33,9 @@ class Index extends React.Component {
             <SectionRequiredDocuments />
             <SectionCreateAccount />
             <SectionPayment />
-
-            <div className="app__section section-review curtain-call">
-              <div className="indicator">7</div>
-              <div className="app__section__title">Review & Submit</div>
-              <div className="button-group button-group--no-bottom-margin">
-                <div className="button button--continue">Submit Application</div>
-              </div>
-            </div>
+            <SectionReview />
           </div>
         </div>
-
       </div>
     )
   }
