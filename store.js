@@ -113,7 +113,9 @@ export const actionTypes = {
   MOVE_FORWARD: 'MOVE_FORWARD',
   MOVE_BACK: 'MOVE_BACK',
   ADD_MEMBERSHIP_DATA: 'ADD_MEMBERSHIP_DATA',
-  ADD_ADDRESS: 'ADD_ADDRESS'
+  ADD_GENERAL_DATA: 'ADD_GENERAL_DATA',
+  ADD_ADDRESS: 'ADD_ADDRESS',
+  ADD_PRO_ANSWER: 'ADD_PRO_ANSWER'
 }
 
 // REDUCERS
@@ -181,12 +183,33 @@ export const reducer = (state = defaultState, action) => {
           })
           case actionTypes.ADD_MEMBERSHIP_DATA:
             const obj = action.obj
-            console.log('REDUCER: ', obj)
+            // console.log('MEMBERSHIP REDUCER: ', obj)
 
             return Object.assign({}, state, {
               application: {
                 'membership': obj.membership,
                 ...state.application
+              }
+            })
+          case actionTypes.ADD_GENERAL_DATA:
+            const generalObj = action.obj
+            console.log('GENERAL REDUCER: ', generalObj)
+
+            return Object.assign({}, state, {
+              application: {
+                ...state.application,
+                generalObj
+              }
+            })
+          case actionTypes.ADD_PRO_ANSWER:
+            const proAnswerObj = action.obj
+            console.log('PRO ANSWER REDUCER: ', proAnswerObj.proQuestion)
+            const answer = proAnswerObj.proQuestion
+
+            return Object.assign({}, state, {
+              application: {
+                ...state.application,
+                'proQuestion': answer
               }
             })
     default: return state
@@ -212,6 +235,14 @@ export const moveBack = (currentSection) => dispatch => {
 
 export const addMembershipData = (obj) => dispatch => {
   return dispatch({ type: actionTypes.ADD_MEMBERSHIP_DATA, obj })
+}
+
+export const addGeneralData = (obj) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_GENERAL_DATA, obj })
+}
+
+export const addProAnswer = (obj) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_PRO_ANSWER, obj })
 }
 
 export const addAddress = (address) => dispatch => {

@@ -38,3 +38,8 @@
   font-weight: $book;
   font-size: 16px;
 }
+
+.row--review-flex {
+  display: flex;
+  align-items: flex-start;
+}

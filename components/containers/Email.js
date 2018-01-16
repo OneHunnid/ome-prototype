@@ -10,7 +10,7 @@ class Email extends React.Component {
         <div className="form-group__label">Email</div>
         <div className="form-group__description">This email will be used for the primary method of contact for ASCAP.</div>
         <div className="row">
-          <input placeholder="name@email.com" className="col col-6"/>
+          <input placeholder="name@email.com" className="col col-6 js-email"/>
         </div>
         <div className="row">
           <input placeholder="Verify email" className="col col-6"/>

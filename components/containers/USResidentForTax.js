@@ -11,10 +11,10 @@ class USResidentForTax extends React.Component {
         <div className="form-group__description">Non-U.S. residents will need to be asked to provide a W8.</div>
         <div className="row">
           <label className="radio">
-            <input className="radio__icon" type="radio" name="resident"/> Yes, I am a U.S Citizen
+            <input className="radio__icon" type="radio" name="resident" value="yes"/> Yes, I am a U.S Citizen
           </label>
           <label className="radio">
-            <input className="radio__icon" type="radio" name="resident"/> No, I am not a U.S. Citizen
+            <input className="radio__icon" type="radio" name="resident" value="no"/> No, I am not a U.S. Citizen
           </label>
         </div>
       </div>

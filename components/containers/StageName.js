@@ -10,7 +10,7 @@ class StageName extends React.Component {
         <div className="form-group__label">Stage Name</div>
         <div className="form-group__description">Enter any stage names, aliases or alternte names you use.</div>
         <div className="row">
-          <input className="col col-6" placeholder="Stage Name"/>
+          <input className="col col-6 js-stage-name" placeholder="Stage Name"/>
         </div>
       </div>
     )

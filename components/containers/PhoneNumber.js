@@ -30,10 +30,10 @@ class PhoneNumber extends React.Component {
         <div className="form-group__description">Country code is automatically selected</div>
         <div className="row">
           <span className="relative">
-            <input placeholder="+1" className="country-code col col-2" id="countryCode" />
+            <input placeholder="+1" className="country-code col col-2 js-country" id="countryCode" />
             <span id="countryFlag" className="flag flag-icon flag-icon-us"></span>
           </span>
-          <input placeholder="555-555-5555" id="phoneNumber" className="col col-3"/>
+          <input placeholder="555-555-5555" id="phoneNumber" className="col col-3 js-phone-number"/>
         </div>
       </div>
     )

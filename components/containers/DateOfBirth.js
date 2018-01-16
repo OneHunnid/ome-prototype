@@ -10,7 +10,7 @@ class DateOfBirth extends React.Component {
         <div className="form-group__label">Date of Birth</div>
         <div className="form-group__description">Must appear as it does on your tax returns.</div>
         <div className="row">
-          <select className="col col-4">
+          <select className="col col-4 js-month">
             <option disabled selected>Month</option>
             <option>January</option>
             <option>February</option>
@@ -25,7 +25,7 @@ class DateOfBirth extends React.Component {
             <option>November</option>
             <option>December</option>
           </select>
-          <select className="col col-2">
+          <select className="col col-2 js-day">
           <option disabled selected>Day</option>
             <option>1</option>
             <option>2</option>
@@ -60,7 +60,7 @@ class DateOfBirth extends React.Component {
             <option>30</option>
             <option>31</option>
           </select>
-          <input className="col col-3" placeholder="1999" type="number" min="1900" nax="2018"/>
+          <input className="col col-3 js-year" placeholder="1999" type="number" min="1900" max="2018"/>
         </div>
       </div>
     )

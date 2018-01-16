@@ -2,7 +2,6 @@ import React from 'react'
 import $ from 'jquery'
 import _ from 'lodash'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { addAddress } from '../store'
 
 import AddAddress from './AddAddress'

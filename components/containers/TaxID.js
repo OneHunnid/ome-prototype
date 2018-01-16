@@ -26,7 +26,7 @@ class TaxID extends React.Component {
         <div className="form-group__description">Please enter your SSN or ITIN</div>
         <div className="row num">
           <input placeholder="*********"  className="col col-6 ssn-number"/>
-          <input className="col col-6 ssn-value" />
+          <input className="col col-6 ssn-value js-tax-id" />
         </div>
       </div>
     )

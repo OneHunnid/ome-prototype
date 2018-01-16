@@ -10,7 +10,7 @@ class GenreSelection extends React.Component {
         <div className="form-group__label">Genre</div>
         <div className="form-group__description">Select the genre that most accurately represents your music composition.</div>
         <div className="row">
-          <select className="col col-6">
+          <select className="col col-6 js-genre">
             <option>Select genre...</option>
             <option>Christian</option>
             <option>Concert</option>
