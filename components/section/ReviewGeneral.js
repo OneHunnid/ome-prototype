@@ -8,11 +8,9 @@ class ReviewGeneral extends React.Component {
   }
   render() {
     const { application } = this.props
-    const data = application.general
+    const data = application.generalObj
 
-    // console.log('ReviewGeneral data', data.name)
-
-    if(typeof data.name === "undefined") {
+    if (data.completed !== true) {
       return null
     } else {
       return (

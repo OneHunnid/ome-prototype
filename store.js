@@ -4,7 +4,11 @@ import thunkMiddleware from 'redux-thunk'
 
 const defaultState = {
   membership: 'none',
-  application: [],
+  application: {
+    generalObj: {
+      completed: false
+    }
+  },
   addresses: [],
   sectionMembership: {
     id: 1,

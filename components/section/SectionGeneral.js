@@ -146,7 +146,8 @@ class SectionGeneral extends React.Component {
       },
       'email': email,
       'genre': genre,
-      'stageName': stageName
+      'stageName': stageName,
+      completed: true
     }
 
     this.props.addGeneralData(generalObj)
@@ -208,7 +209,7 @@ class SectionGeneral extends React.Component {
             </div>
 
             <div className="app-wrapper--review">
-              
+              <ReviewGeneral />
             </div>
         </div>
       </section>
