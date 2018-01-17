@@ -11,7 +11,7 @@ class PasswordField extends React.Component {
         <div className="form-group__label">Password</div>
         <div className="form-group__description">This will be used to log in to your personal ASCAP Member Access account.</div>
         <div className="row">
-          <input placeholder="password" className="col col-12" type="password"/>
+          <input placeholder="password" className="col col-12 js-password" type="password"/>
         </div>
         <div className="row">
           <input placeholder="verify password" className="col col-12" type="password"/>
