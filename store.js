@@ -10,6 +10,15 @@ const defaultState = {
     },
     royaltiesObj: {
       completed: false
+    },
+    requiredDocumentsObj: {
+      completed: false
+    },
+    createAccountObj: {
+      completed: false
+    },
+    paymentObj: {
+      completed: false
     }
   },
   addresses: [],
@@ -122,6 +131,7 @@ export const actionTypes = {
   ADD_MEMBERSHIP_DATA: 'ADD_MEMBERSHIP_DATA',
   ADD_GENERAL_DATA: 'ADD_GENERAL_DATA',
   ADD_ROYALTIES_DATA: 'ADD_ROYALTIES_DATA',
+  ADD_REQUIRED_DOCUMENTS_DATA: 'ADD_REQUIRED_DOCUMENTS_DATA',
   ADD_ADDRESS: 'ADD_ADDRESS',
   ADD_PRO_ANSWER: 'ADD_PRO_ANSWER'
 }
@@ -216,6 +226,16 @@ export const reducer = (state = defaultState, action) => {
                   royaltiesObj
                 }
               })
+              case actionTypes.ADD_REQUIRED_DOCUMENTS_DATA:
+                const requiredDocumentsObj = action.obj
+                console.log('REQUIRED DOCUMENTS REDUCER: ', requiredDocumentsObj)
+
+                return Object.assign({}, state, {
+                  application: {
+                    ...state.application,
+                    requiredDocumentsObj
+                  }
+                })
           case actionTypes.ADD_PRO_ANSWER:
             const proAnswerObj = action.obj
             console.log('PRO ANSWER REDUCER: ', proAnswerObj.proQuestion)
@@ -258,6 +278,10 @@ export const addGeneralData = (obj) => dispatch => {
 
 export const addRoyaltiesData = (obj) => dispatch => {
   return dispatch({ type: actionTypes.ADD_ROYALTIES_DATA, obj })
+}
+
+export const addRequiredDocumentsData = (obj) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_REQUIRED_DOCUMENTS_DATA, obj })
 }
 
 export const addProAnswer = (obj) => dispatch => {
