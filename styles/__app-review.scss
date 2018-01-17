@@ -13,7 +13,15 @@
     margin-bottom: 0;
   }
 
-  .review-direct-deposit-wrapper .row {
+  .app-review-group {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .app-review-group .row {
     margin-bottom: 2px;
   }
 

@@ -30,7 +30,7 @@ class SectionCreateAccount extends React.Component {
       'password': password,
       completed: true
     }
-    console.log('FOOOOO BAAARRRR')
+
     this.props.addCreateAccountData(createAccountObj)
   }
   componentDidMount() {

@@ -17,7 +17,7 @@ class ReviewRoyalties extends React.Component {
     } else {
       return (
         <section className="app__review card card--default" id="review-membership">
-          <div className="review-direct-deposit-wrapper">
+          <div className="app-review-group">
             <div className="row">
               <div className="col col-4 review-label">Direct Deposit</div>
               <div className="col col-8 review-selection">{data.directDeposit.checked}</div>

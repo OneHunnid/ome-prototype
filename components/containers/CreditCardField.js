@@ -10,14 +10,14 @@ class CreditCardField extends React.Component {
         <div className="form-group__label">Pay with Card</div>
         <div className="form-group__description ">Please enter the details of the credit card you will be using</div>
         <div className="row">
-          <input className="col col-12" placeholder="Name" />
+          <input className="col col-12 js-card-name" placeholder="Name" />
         </div>
         <div className="row">
-          <input className="col col-12" placeholder="Card Number" />
+          <input className="col col-12 js-card-number" placeholder="Card Number" />
         </div>
         <div className="row">
-          <input className="col col-6" placeholder="MM/YY" />
-          <input className="col col-6" placeholder="CVV" />
+          <input className="col col-6 js-card-exp" placeholder="MM/YY" />
+          <input className="col col-6 js-card-cvc" placeholder="CVC" />
         </div>
       </div>
     )
