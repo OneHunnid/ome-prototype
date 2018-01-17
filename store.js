@@ -7,6 +7,9 @@ const defaultState = {
   application: {
     generalObj: {
       completed: false
+    },
+    royaltiesObj: {
+      completed: false
     }
   },
   addresses: [],
@@ -118,6 +121,7 @@ export const actionTypes = {
   MOVE_BACK: 'MOVE_BACK',
   ADD_MEMBERSHIP_DATA: 'ADD_MEMBERSHIP_DATA',
   ADD_GENERAL_DATA: 'ADD_GENERAL_DATA',
+  ADD_ROYALTIES_DATA: 'ADD_ROYALTIES_DATA',
   ADD_ADDRESS: 'ADD_ADDRESS',
   ADD_PRO_ANSWER: 'ADD_PRO_ANSWER'
 }
@@ -160,8 +164,6 @@ export const reducer = (state = defaultState, action) => {
           })
         }
         case actionTypes.ADD_ADDRESS:
-          // console.log('REDUCER ADD_ADDRESS ', action.address)
-
           const type = action.address.type
           const country = action.address.country
           const addressOne = action.address.addressOne
@@ -187,7 +189,6 @@ export const reducer = (state = defaultState, action) => {
           })
           case actionTypes.ADD_MEMBERSHIP_DATA:
             const obj = action.obj
-            // console.log('MEMBERSHIP REDUCER: ', obj)
 
             return Object.assign({}, state, {
               application: {
@@ -205,6 +206,16 @@ export const reducer = (state = defaultState, action) => {
                 generalObj
               }
             })
+            case actionTypes.ADD_ROYALTIES_DATA:
+              const royaltiesObj = action.obj
+              console.log('ROYALTIES REDUCER: ', royaltiesObj)
+
+              return Object.assign({}, state, {
+                application: {
+                  ...state.application,
+                  royaltiesObj
+                }
+              })
           case actionTypes.ADD_PRO_ANSWER:
             const proAnswerObj = action.obj
             console.log('PRO ANSWER REDUCER: ', proAnswerObj.proQuestion)
@@ -243,6 +254,10 @@ export const addMembershipData = (obj) => dispatch => {
 
 export const addGeneralData = (obj) => dispatch => {
   return dispatch({ type: actionTypes.ADD_GENERAL_DATA, obj })
+}
+
+export const addRoyaltiesData = (obj) => dispatch => {
+  return dispatch({ type: actionTypes.ADD_ROYALTIES_DATA, obj })
 }
 
 export const addProAnswer = (obj) => dispatch => {

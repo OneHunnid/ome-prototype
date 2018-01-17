@@ -13,7 +13,7 @@ class SectionMembership extends React.Component {
   constructor(props) {
     super(props)
     this.__handleSelection = this.__handleSelection.bind(this)
-    this.__Foo = this.__Foo.bind(this)
+    this.__handleDataToStore = this.__handleDataToStore.bind(this)
 
     this.state = {}
   }
@@ -49,7 +49,7 @@ class SectionMembership extends React.Component {
       companyTypeHook.classList.remove('showtime')
     }
   }
-  __Foo() {
+  __handleDataToStore() {
     let membershipObj = {
       'membership': this.state.membership
     }
@@ -142,7 +142,7 @@ class SectionMembership extends React.Component {
             <div className="js-company-type">
               <CompanyType />
             </div>
-            <div onClick={this.__Foo}>
+            <div onClick={this.__handleDataToStore}>
               <ButtonGroupBackContinue currentSection={sectionMembership} primaryButtonText={"Continue"} secondaryButtonText={"Cancel"}/>
             </div>
           </div>

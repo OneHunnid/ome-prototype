@@ -5,6 +5,18 @@
     overflow: visible;
   }
 
+  .row {
+    margin-bottom: 9px;
+  }
+
+  .row:last-child {
+    margin-bottom: 0;
+  }
+
+  .review-direct-deposit-wrapper .row {
+    margin-bottom: 2px;
+  }
+
   .app-wrapper {
     opacity: 1;
   }
@@ -32,11 +44,16 @@
   text-align: right;
   font-weight: $medium;
   font-size: 16px;
+
+  &--small {
+    font-size: 12px;
+  }
 }
 
 .review-selection {
   font-weight: $book;
   font-size: 16px;
+  text-transform: capitalize;
 }
 
 .row--review-flex {
