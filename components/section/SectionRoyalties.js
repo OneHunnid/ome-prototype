@@ -64,7 +64,7 @@ class SectionRoyalties extends React.Component {
     const { sectionRoyalties } = this.props
 
     return (
-      <section className="app__section section-royalties curtain-call" id="section-royalties">
+      <section className="app__section section-royalties" id="section-royalties">
         <div className="indicator">3</div>
         <div className="app__section__title">Royalties</div>
 

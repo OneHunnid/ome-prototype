@@ -65,7 +65,7 @@ class SectionPayment extends React.Component {
 
 
     return (
-      <div className="app__section section-payment curtain-call" id="section-payment">
+      <div className="app__section section-payment" id="section-payment">
         <div className="indicator">6</div>
         <div className="app__section__title">Payment</div>
 

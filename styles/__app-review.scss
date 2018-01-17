@@ -5,6 +5,10 @@
     overflow: visible;
   }
 
+  .app__section:last-child::before {
+    content: "";
+  }
+
   .row {
     margin-bottom: 9px;
   }

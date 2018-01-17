@@ -254,6 +254,10 @@ select {
     }
   }
 
+  &--submit {
+    margin-top: 60px;
+  }
+
   &--option-two.selected {
     background: #FFFFFF;
     background-image: linear-gradient(-180deg, rgba(255,255,255,0.00) 0%, rgba(17,120,206,0.04) 100%);
@@ -568,7 +572,7 @@ select {
       overflow: visible;
     }
   }
-  
+
   &-review {
     max-height: 48px;
     overflow: hidden;
@@ -718,4 +722,15 @@ select {
     font-size: 30px;
     font-weight: $medium;
   }
+}
+
+.overflow-box {
+  background: $white;
+  padding: 18px;
+  font-size: 14px;
+  height: 300px;
+  overflow: hidden;
+  border: 1px solid $n300;
+  margin-bottom: 24px;
+  overflow-y: scroll;
 }
