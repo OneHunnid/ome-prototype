@@ -15,7 +15,7 @@ class AddressComponent extends React.Component {
 
     const addressOptions = _.map(addresses, function(key) {
       if (key.completed == true) {
-        return <AddressOption address={key} />
+        return <AddressOption address={key} key={addresses.indexOf(key)} />
       }
     })
 

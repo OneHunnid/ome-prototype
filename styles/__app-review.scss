@@ -72,3 +72,17 @@
   display: flex;
   align-items: flex-start;
 }
+
+.review-edit {
+  position: absolute;
+  right: 0px;
+  top: -48px;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: $b500;
+
+  &:hover {
+    border-bottom: 1px solid $b500;
+    cursor: pointer;
+  }
+}

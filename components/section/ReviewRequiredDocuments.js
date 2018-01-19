@@ -15,6 +15,7 @@ class ReviewRequiredDocuments extends React.Component {
     } else {
       return (
         <section className="app__review card card--default" id="review-membership">
+          <div className="review-edit">edit</div>
           <div className="row">
             <div className="col col-4 review-label">Backup Witholdings</div>
             <div className="col col-8 review-selection">{data.backupWitholdings}</div>

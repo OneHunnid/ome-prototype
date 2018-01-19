@@ -11,6 +11,7 @@ class ReviewMembership extends React.Component {
 
     return (
       <section className="app__review card card--default" id="review-membership">
+        <div className="review-edit">edit</div>
         <div className="row">
           <div className="col col-4 review-label">Membership</div>
           <div className="col col-8 review-selection">{application.membership}</div>

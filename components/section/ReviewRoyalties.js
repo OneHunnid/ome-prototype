@@ -10,13 +10,12 @@ class ReviewRoyalties extends React.Component {
     const { application } = this.props
     const data = application.royaltiesObj
 
-    console.log(application)
-
     if (data.completed !== true) {
       return null
     } else {
       return (
         <section className="app__review card card--default" id="review-membership">
+          <div className="review-edit">edit</div>
           <div className="app-review-group">
             <div className="row">
               <div className="col col-4 review-label">Direct Deposit</div>

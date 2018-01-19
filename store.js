@@ -210,7 +210,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_GENERAL_DATA:
             const generalObj = action.obj
-            console.log('GENERAL REDUCER: ', generalObj)
+            // console.log('GENERAL REDUCER: ', generalObj)
 
             return Object.assign({}, state, {
               application: {
@@ -220,7 +220,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_ROYALTIES_DATA:
             const royaltiesObj = action.obj
-            console.log('ROYALTIES REDUCER: ', royaltiesObj)
+            // console.log('ROYALTIES REDUCER: ', royaltiesObj)
 
             return Object.assign({}, state, {
               application: {
@@ -230,7 +230,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_REQUIRED_DOCUMENTS_DATA:
             const requiredDocumentsObj = action.obj
-            console.log('REQUIRED DOCUMENTS REDUCER: ', requiredDocumentsObj)
+            // console.log('REQUIRED DOCUMENTS REDUCER: ', requiredDocumentsObj)
 
             return Object.assign({}, state, {
               application: {
@@ -240,7 +240,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_CREATE_ACCOUNT_DATA:
             const createAccountObj = action.obj
-            console.log('CREATE ACCOUNT REDUCER: ', createAccountObj)
+            // console.log('CREATE ACCOUNT REDUCER: ', createAccountObj)
 
             return Object.assign({}, state, {
               application: {
@@ -250,7 +250,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_PAYMENT_DATA:
             const paymentObj = action.obj
-            console.log('CREATE ACCOUNT REDUCER: ', paymentObj)
+            // console.log('CREATE ACCOUNT REDUCER: ', paymentObj)
 
             return Object.assign({}, state, {
               application: {
@@ -260,7 +260,7 @@ export const reducer = (state = defaultState, action) => {
             })
           case actionTypes.ADD_PRO_ANSWER:
             const proAnswerObj = action.obj
-            console.log('PRO ANSWER REDUCER: ', proAnswerObj.proQuestion)
+            // console.log('PRO ANSWER REDUCER: ', proAnswerObj.proQuestion)
             const answer = proAnswerObj.proQuestion
 
             return Object.assign({}, state, {

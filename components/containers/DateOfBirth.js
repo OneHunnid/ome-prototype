@@ -11,19 +11,19 @@ class DateOfBirth extends React.Component {
         <div className="form-group__description">Must appear as it does on your tax returns.</div>
         <div className="row">
           <select className="col col-4 js-month">
-            <option disabled selected>Month</option>
-            <option>January</option>
-            <option>February</option>
-            <option>March</option>
-            <option>April</option>
-            <option>May</option>
-            <option>June</option>
-            <option>July</option>
-            <option>August</option>
-            <option>September</option>
-            <option>October</option>
-            <option>November</option>
-            <option>December</option>
+            <option value="month" disabled selected>Month</option>
+            <option value="january">January</option>
+            <option value="february">February</option>
+            <option value="march">March</option>
+            <option value="april">April</option>
+            <option value="may">May</option>
+            <option value="june">June</option>
+            <option value="july">July</option>
+            <option value="august">August</option>
+            <option value="september">September</option>
+            <option value="october">October</option>
+            <option value="november">November</option>
+            <option value="december">December</option>
           </select>
           <select className="col col-2 js-day">
           <option disabled selected>Day</option>
