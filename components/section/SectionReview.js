@@ -62,7 +62,7 @@ class SectionReview extends React.Component {
             <div className="form-group">
               <div className="row">
                 <label className="checkbox">
-                  <input className="checkbox__icon js-backup-witholdings" type="checkbox"/> I want ASCAP to represent me regarding <a href="#">home recording rights.</a>
+                  <input className="checkbox__icon js-backup-witholdings" type="checkbox"/> <label>I want ASCAP to represent me regarding <a href="#">home recording rights.</a></label>
                 </label>
               </div>
             </div>
