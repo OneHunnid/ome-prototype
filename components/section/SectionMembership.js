@@ -117,7 +117,7 @@ class SectionMembership extends React.Component {
                 </div>
               </div>
               <div className="membership-block col col-4 js-option-both js-membership-option" onClick={this.__handleSelection} data-membership-type="Writer & Publisher">
-                <div className="membership-block__title">Both</div>
+                <div className="membership-block__title">Writer & Publisher</div>
                 <div className="membership-block__wrapper">
                   <div className="membership-block__cost-wrapper">
                     <div className="membership-block__cost">75</div>
