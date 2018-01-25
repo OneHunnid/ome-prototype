@@ -90,7 +90,7 @@ class SectionMembership extends React.Component {
                       <li>Mailing Address</li>
                       <li>SSN/ITIN</li>
                       <li>Tax Documents</li>
-                      <li>Must be older than 13*</li>
+                      <li>Must be older than 18*</li>
                     </ul>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ class SectionMembership extends React.Component {
                       <li>Mailing Address</li>
                       <li>SSN/ITIN</li>
                       <li>Tax Documents</li>
-                      <li>Must be older than 13*</li>
+                      <li>Must be older than 18*</li>
                     </ul>
                   </div>
                 </div>
@@ -132,7 +132,7 @@ class SectionMembership extends React.Component {
                       <li>Mailing Address</li>
                       <li>SSN/ITIN</li>
                       <li>Tax Documents</li>
-                      <li>Must be older than 13*</li>
+                      <li>Must be older than 18*</li>
                     </ul>
                   </div>
                 </div>
