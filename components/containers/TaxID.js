@@ -17,7 +17,7 @@ class TaxID extends React.Component {
        });
   }
   componentDidMount() {
-    this.__replaceSSN()
+    // this.__replaceSSN()
   }
   render() {
     return (
@@ -25,8 +25,7 @@ class TaxID extends React.Component {
         <div className="form-group__label">Tax ID</div>
         <div className="form-group__description">Please enter your SSN or ITIN</div>
         <div className="row num">
-          <input placeholder="*********"  className="col col-6 ssn-number"/>
-          <input className="col col-6 ssn-value js-tax-id" />
+          <input placeholder=""  className="col col-6 ssn-number"/>
         </div>
       </div>
     )
@@ -34,3 +33,5 @@ class TaxID extends React.Component {
 }
 
 export default TaxID
+
+// <input className="col col-6 ssn-value js-tax-id" />

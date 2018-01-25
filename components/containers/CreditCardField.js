@@ -1,8 +1,15 @@
 import React from 'react'
+import Cleave from 'cleave.js'
 
 class CreditCardField extends React.Component {
   constructor(props) {
     super(props)
+  }
+  componentDidMount() {
+    var cleave = new Cleave('.js-card-exp', {
+      date: true,
+      datePattern: ['m', 'y']
+    });
   }
   render() {
     return (
