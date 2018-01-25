@@ -22,7 +22,7 @@ class ReviewCreateAccount extends React.Component {
           </div>
           <div className="row">
             <div className="col col-4 review-label">Password</div>
-            <div className="col col-8 review-selection">{data.password}</div>
+            <div className="col col-8 review-selection">{data.password} <div className="reveal-password">Show</div></div>
           </div>
         </section>
       )

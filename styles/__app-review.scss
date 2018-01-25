@@ -86,3 +86,19 @@
     cursor: pointer;
   }
 }
+
+.reveal-password {
+  display: inline-block;
+  background: $n300;
+  border-radius: 2px;
+  padding: 4px 8px;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: $medium;
+  cursor: pointer;
+  transition: background ease-in-out 0.24s;
+
+  &:hover {
+    background: $n400;
+  }
+}
