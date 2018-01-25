@@ -1,15 +1,19 @@
 import React from 'react'
-import Cleave from 'cleave.js'
+// import Cleave from 'cleave.js'
+import Cleave from 'cleave.js/react';
 
 class CreditCardField extends React.Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      dateRawValue: ''
+    };
+
+    this.onDateChange = this.onDateChange.bind(this);
   }
-  componentDidMount() {
-    var cleave = new Cleave('.js-card-exp', {
-      date: true,
-      datePattern: ['m', 'y']
-    });
+  onDateChange(event) {
+      this.setState({dateRawValue: event.target.rawValue});
   }
   render() {
     return (
@@ -23,7 +27,7 @@ class CreditCardField extends React.Component {
           <input className="col col-12 js-card-number" placeholder="Card Number" />
         </div>
         <div className="row">
-          <input className="col col-6 js-card-exp" placeholder="MM/YY" />
+          <Cleave className="col col-6 js-card-exp" placeholder="MM/YY" options={{date: true, datePattern: ['m', 'y']}} onChange={this.onDateChange}/>
           <input className="col col-6 js-card-cvc" placeholder="CVC" />
         </div>
       </div>
