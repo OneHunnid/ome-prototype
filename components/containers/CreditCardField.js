@@ -1,5 +1,4 @@
 import React from 'react'
-// import Cleave from 'cleave.js'
 import Cleave from 'cleave.js/react';
 
 class CreditCardField extends React.Component {
