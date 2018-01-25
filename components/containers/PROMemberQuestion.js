@@ -40,7 +40,7 @@ class PROMemberQuestion extends React.Component {
 
     // toggle Description On Hover
     const currentDescription = $('.js-pro-description').text()
-    
+
     $('.js-option-yes').on("mouseover", function() {
       $('.js-pro-description').text("You are a member! ")
     })

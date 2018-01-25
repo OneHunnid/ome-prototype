@@ -1,0 +1,13 @@
+.field-password.error {
+  border: 1px solid $r300;
+}
+
+.error-message {
+  display: none;
+  color: $r300;
+  font-size: 12px;
+
+  &.showtime {
+    display: inline-block;
+  }
+}
