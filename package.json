@@ -30,9 +30,6 @@
     "sass-loader": "^6.0.6",
     "underscore": "^1.8.3"
   },
-  "devDependencies": {
-    "cleave": "^1.0.0-alpha.10"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server.js",
