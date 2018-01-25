@@ -15,7 +15,7 @@ class DirectDeposit extends React.Component {
         <div className="form-group__description">This is the quickest way to receive your royalties. <a href="">Terms and Conditions</a></div>
         <div className="row">
           <label className="checkbox js-checkbox-royalties">
-            <input id="directDepositCheckbox" className="checkbox__icon" type="checkbox" onClick={this.__handleClickShowtime}/> Yes, I would like to enroll in direct depsit
+            <input id="directDepositCheckbox" className="checkbox__icon" type="checkbox" onClick={this.__handleClickShowtime}/> Yes, I would like to enroll in direct deposit
           </label>
         </div>
         <div className="row card-bank-account" id="js-card-royalties">

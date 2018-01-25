@@ -8,7 +8,7 @@ class UsernameField extends React.Component {
     return (
       <div className="form-group">
         <div className="form-group__label">Username</div>
-        <div className="form-group__description">Case sensitive and 8–20 characters. This is used to log in to your personal Member Access account (e.g., username_459).</div>
+        <div className="form-group__description">Case sensitive and 8–20 alphanumeric characters. This is used to log in to your personal Member Access account (e.g., username_459).</div>
         <div className="row">
           <input placeholder="username" className="col col-12 js-username"/>
         </div>

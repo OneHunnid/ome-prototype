@@ -36,7 +36,7 @@ class PasswordField extends React.Component {
     return (
       <div className="form-group">
         <div className="form-group__label">Password</div>
-        <div className="form-group__description">This will be used to log in to your personal ASCAP Member Access account.</div>
+        <div className="form-group__description">Case sensitive and 8-20 characters. This will be used to log in to your personal ASCAP Member Access account.</div>
         <div className="row">
           <input placeholder="password" className="col col-12 field-password js-password-one" type="password"/>
         </div>

@@ -31,9 +31,9 @@ class PROMemberQuestion extends React.Component {
 
     // Set Description When Clicked
     if (answer === "yes") {
-      $('.js-pro-description').text("You are a member! ")
+      $('.js-pro-description').text("We're thrilled you want to join us at ASCAP! You may be asked to provide a release letter from you current PRO during this application. If you don't have one, no problem! You'll have 90 days to submit the letter when you're done here today. Welcome aboard (almost)!")
     } else if ( answer === "no" ) {
-      $('.js-pro-description').text("You aren't a member??")
+      $('.js-pro-description').text("Hooray! We're excited you've chosen ASCAP to represent your rights as a music maker!")
     } else if ( answer === "I don't know") {
       $('.js-pro-description').text("A PRO (like ASCAP, BMI, or PRS) collects royalties on behalf of music creators. If you are a member of a PRO, you will need a release letter that allows you to join ASCAP. You may continue through the sign-up process anyway.")
     }
@@ -42,7 +42,7 @@ class PROMemberQuestion extends React.Component {
     const currentDescription = $('.js-pro-description').text()
 
     $('.js-option-yes').on("mouseover", function() {
-      $('.js-pro-description').text("You are a member! ")
+      $('.js-pro-description').text("We're thrilled you want to join us at ASCAP! You may be asked to provide a release letter from you current PRO during this application. If you don't have one, no problem! You'll have 90 days to submit the letter when you're done here today. Welcome aboard (almost)!")
     })
 
     $('.js-option-yes').on("mouseleave", function() {
@@ -50,7 +50,7 @@ class PROMemberQuestion extends React.Component {
     })
 
     $('.js-option-no').on("mouseover", function() {
-      $('.js-pro-description').text("You aren't a member??")
+      $('.js-pro-description').text("Hooray! We're excited you've chosen ASCAP to represent your rights as a music maker!")
     })
 
     $('.js-option-no').on("mouseleave", function() {

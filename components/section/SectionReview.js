@@ -40,9 +40,9 @@ class SectionReview extends React.Component {
             <div className="card__title">Membership Agreements</div>
             <div className="card__description">Warranties & Representations and Membership Terms & Conditions.</div>
             <ol className="agreement-list">
-              <li className="agreement-list-item"><a href="#">Agreement A</a></li>
-              <li className="agreement-list-item"><a href="#">Agreement B</a></li>
-              <li className="agreement-list-item"><a href="#">Agreement C</a></li>
+              <li className="agreement-list-item"><a href="#">Articles of Association</a></li>
+              <li className="agreement-list-item"><a href="#">ASCAP Writer Agreement</a></li>
+              <li className="agreement-list-item"><a href="#">Direct Deposit</a></li>
             </ol>
             <div className="overflow-box">
               <p>WARRANTIES & REPRESENTATIONS</p>
@@ -54,7 +54,7 @@ class SectionReview extends React.Component {
             <div className="form-group">
               <div className="row">
                 <label className="checkbox">
-                  <input className="checkbox__icon js-backup-witholdings" type="checkbox"/> I acknowledge that I have read both the Warranties & Representations and the ASCAP Membership Agreement and I agree to both.
+                  <input className="checkbox__icon js-backup-witholdings" type="checkbox"/> <label> I acknowledge that I have read both the Warranties & Representations and the ASCAP Membership Agreement and I agree to both.</label>
                 </label>
               </div>
             </div>
