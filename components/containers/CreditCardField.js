@@ -1,5 +1,5 @@
 import React from 'react'
-import Cleave from 'cleave.js/react';
+// import Cleave from 'cleave.js/react';
 
 class CreditCardField extends React.Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class CreditCardField extends React.Component {
           <input className="col col-12 js-card-number" placeholder="Card Number" />
         </div>
         <div className="row">
-          <Cleave className="col col-6 js-card-exp" placeholder="MM/YY" options={{date: true, datePattern: ['m', 'y']}} onChange={this.onDateChange}/>
+          <input className="col col-6 js-card-exp" placeholder="MM/YY" />
           <input className="col col-6 js-card-cvc" placeholder="CVC" />
         </div>
       </div>
