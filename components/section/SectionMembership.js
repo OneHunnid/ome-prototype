@@ -120,7 +120,7 @@ class SectionMembership extends React.Component {
                 <div className="membership-block__title">Writer & Publisher</div>
                 <div className="membership-block__wrapper">
                   <div className="membership-block__cost-wrapper">
-                    <div className="membership-block__cost">75</div>
+                    <div className="membership-block__cost">100</div>
                     <div className="membership-block__label">Application Fee</div>
                     <div className="membership-block__sub">non-refundable</div>
                   </div>
