@@ -18,8 +18,9 @@ Before you can use the now command, you must sign up for a free account at Zeit.
 1. After making changes to the application, make sure you commit them using git.
 2. Run the command `npm run build` - this'll build the application
 3. Run the command `npm run export` - this'll export the recently built application to the out folder as a static application
-4. Run the command `now` to deploy using the now services
+4. Run the command `now` to deploy using the now services.
 
+After you deploy using now in the terminal, it'll display the public url in the terminal window (and also copy it to your clipboard so you can paste it in the browser.)
 
 ### Links
 
